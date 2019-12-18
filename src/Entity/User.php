@@ -59,6 +59,16 @@ class User implements UserInterface
      */
     private $workshops;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $picture;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
     public function __construct()
     {
         $this->address = new ArrayCollection();
@@ -224,6 +234,7 @@ class User implements UserInterface
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * Returns the roles granted to the user.
      *
@@ -275,5 +286,29 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+=======
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+>>>>>>> dev
     }
 }
