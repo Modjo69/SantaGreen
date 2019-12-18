@@ -20,7 +20,7 @@ class TutoRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Tuto[] Returns an array of Tuto objects
+    //  * @return TutoFixtures[] Returns an array of TutoFixtures objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class TutoRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Tuto
+    public function findOneBySomeField($value): ?TutoFixtures
     {
         return $this->createQueryBuilder('t')
             ->andWhere('t.exampleField = :val')
