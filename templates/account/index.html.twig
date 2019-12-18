@@ -28,7 +28,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact2" role="tab"
-                   aria-controls="pills-contact" aria-selected="false">Ajouter un atelier</a>
+                   aria-controls="pills-contact" aria-selected="false">Ajouter un tutoriel</a>
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
@@ -39,10 +39,15 @@
                 <h4 style="text-align:center;">My Address</h4>
                 {{ form_start(formAddress) }}
                 {{ form_end(formAddress) }}
-
             </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                {{ form_start(formArticle) }}
+                {{ form_end(formArticle) }}
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                {{ form_start(formWorkshop) }}
+                {{ form_end(formWorkshop) }}
+            </div>
             <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab">dsd</div>
 
         </div>
