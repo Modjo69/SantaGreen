@@ -2,4 +2,18 @@
 
 {% block  content %}
 
+    {% for category in categorys %}
+    <div class="container flex-row-reverse"><!-- enlever le row-reverse lors de la deuxième boucle-->
+        <div class="row row-cols-4">
+            <div style='border: solid black'class="col">Column</div>
+            <div style='border: solid black'class="col">Column</div>
+            <div style='border: solid black'class="col-6">{{category.name}}</div>
+            <div style='border: solid black'class="col">Column</div>
+            <div style='border: solid black'class="col">Column</div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
 {% endblock %}
