@@ -6,6 +6,40 @@ $primary: darken(#428bca, 20%);
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+
+#profile-picture {
+    position:absolute;
+    max-width: 140px;
+    max-height: 190px;
+    left:40%;
+    top:60%;
+    border-radius: 50%;
+}
+
+#background-profile {
+    border-radius: 4px;
+}
+
+#top-profile {
+    position: relative;
+}
+
+#profile-menu {
+    background-color: beige;
+    border-radius: 4px;
+}
+
+#profile-menu h4 {
+    margin:auto;
+    margin-top: 10%;
+}
+
+#menu-items {
+    display: flex;
+    justify-content: center;
+}
+
+
 body {
     background-color: white;
     color : black;
@@ -241,3 +275,49 @@ a {
     left: 0;
     bottom: 0;
 }
+
+
+.santa .hat .hat-end:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: white;
+    content: "";
+    display: inline-block;
+    top: 30px;
+    position: absolute;
+    left: 0px;
+    z-index: 11;
+}
+
+.circles {
+    background: #a31f2b;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    z-index: 9;
+    position: absolute;
+    right: -6px;
+    top: 12px;
+}
+
+.circles:after {
+    background:white;
+    width:40px;
+    height:40px;
+    right:0;
+    top:50px;
+    content:"";
+    border-radius:50%;
+}
+
+.dirty-overflow {
+    overflow: hidden;
+    width: 120px;
+    height: 76px;
+    border-radius: 0px 0px 105px 105px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
