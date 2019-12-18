@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\Workshop;
+use App\Form\SearchCategoryType;
 use App\Form\WorkshopType;
 use App\Repository\WorkshopRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,12 +18,26 @@ use Symfony\Component\Routing\Annotation\Route;
 class WorkshopController extends AbstractController
 {
     /**
-     * @Route("/", name="workshop_index", methods={"GET"})
+     * @Route("/", name="workshop_index", methods={"GET", "POST"})
      */
-    public function index(WorkshopRepository $workshopRepository): Response
+    public function index(WorkshopRepository $workshopRepository, Request $request): Response
     {
+
+        $workshops= $this->getDoctrine()
+            ->getRepository(Workshop::class)
+            ->findAll();
+        $formSearch= $this-> createForm(SearchCategoryType::class);
+        $formSearch->handleRequest($request);
+
+        if ($formSearch->isSubmitted()){
+            var_dump($formSearch->get('category')->getData()->getId());
+            $workshops= $this->getDoctrine()
+                ->getRepository(Workshop::class)
+                ->findBy(['category'=>$formSearch->get('category')->getData()]);
+        }
         return $this->render('workshop/index.html.twig', [
-            'workshops' => $workshopRepository->findAll(),
+            'formSearch'=>$formSearch->createView(),
+            'workshops' => $workshops,
         ]);
     }
 

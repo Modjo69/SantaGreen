@@ -3,6 +3,11 @@
 {% block title %}Workshop index{% endblock %}
 
 {% block body %}
+
+    {{ form_start(formSearch) }}
+    {{ form_row(formSearch.category) }}
+    <button type="submit">rechercher</button>
+    {{ form_end(formSearch) }}
     <h1>Workshop index</h1>
 
     <table class="table">

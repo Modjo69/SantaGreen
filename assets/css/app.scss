@@ -7,6 +7,7 @@ $primary: darken(#428bca, 20%);
 @import "~bootstrap/scss/bootstrap";
 
 
+
 #profile-picture {
     position:absolute;
     max-width: 140px;
@@ -40,10 +41,12 @@ $primary: darken(#428bca, 20%);
 }
 
 
+
 body {
     background-color: white;
     color : black;
 }
+
 
 
 /************************NAVBAR*************************/
@@ -275,6 +278,7 @@ a {
     left: 0;
     bottom: 0;
 }
+
 
 
 .santa .hat .hat-end:after {
