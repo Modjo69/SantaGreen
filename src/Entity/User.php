@@ -234,7 +234,6 @@ class User implements UserInterface
         return $this;
     }
 
-<<<<<<< HEAD
     /**
      * Returns the roles granted to the user.
      *
@@ -286,7 +285,8 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
-=======
+    }
+
     public function getPicture(): ?string
     {
         return $this->picture;
@@ -309,6 +309,5 @@ class User implements UserInterface
         $this->description = $description;
 
         return $this;
->>>>>>> dev
     }
 }
