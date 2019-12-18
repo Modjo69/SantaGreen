@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+
+
+    {{ form_start(formSearch) }}
+    {{ form_row(formSearch.category) }}
+    <button type="submit">rechercher</button>
+    {{ form_end(formSearch) }}
+
+    {% for article in articles %}
+        <div class="card">
+            <div class="card-body">
+                {{ article.name }}
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
