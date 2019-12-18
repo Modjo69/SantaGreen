@@ -3,17 +3,19 @@
 {% block  content %}
 
     {% for category in categorys %}
-    <div class="container flex-row-reverse"><!-- enlever le row-reverse lors de la deuxième boucle-->
-        <div class="row row-cols-4">
-            <div style='border: solid black'class="col">Column</div>
-            <div style='border: solid black'class="col">Column</div>
-            <div style='border: solid black'class="col-6">{{category.name}}</div>
-            <div style='border: solid black'class="col">Column</div>
-            <div style='border: solid black'class="col">Column</div>
+<div class=" boxHomePage container">
+    <div class="row {% if loop.index is divisible by(2) %} flex-row-reverse {% else %} row {% endif %}">
+        <div style='border: solid black'class="boxTuto col-6 row">
+            <div style='border: solid black'class="tutoExemple col-6">Column</div>
+            <div style='border: solid black'class="tutoExemple col-6">Column</div>
+            <div style='border: solid black'class="tutoExemple col-6">Column</div>
+            <div style='border: solid black'class="tutoExemple col-6">Column</div>
         </div>
+        <div style='border: solid black'class="boxCategory col-6">{{ category.name }}</div>
     </div>
+</div>
     {% endfor %}
 
 
-
 {% endblock %}
+
