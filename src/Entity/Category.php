@@ -43,10 +43,16 @@ class Category
      */
     private $tutos;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Workshop", mappedBy="category")
+     */
+    private $workshops;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->tutos = new ArrayCollection();
+        $this->workshops = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -146,6 +152,37 @@ class Category
             // set the owning side to null (unless already changed)
             if ($tuto->getCategory() === $this) {
                 $tuto->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Workshop[]
+     */
+    public function getWorkshops(): Collection
+    {
+        return $this->workshops;
+    }
+
+    public function addWorkshop(Workshop $workshop): self
+    {
+        if (!$this->workshops->contains($workshop)) {
+            $this->workshops[] = $workshop;
+            $workshop->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWorkshop(Workshop $workshop): self
+    {
+        if ($this->workshops->contains($workshop)) {
+            $this->workshops->removeElement($workshop);
+            // set the owning side to null (unless already changed)
+            if ($workshop->getCategory() === $this) {
+                $workshop->setCategory(null);
             }
         }
 

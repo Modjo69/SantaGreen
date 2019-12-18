@@ -23,6 +23,7 @@ class ArticleController extends AbstractController
             ->findAll();
         $formSearch= $this-> createForm(SearchCategoryType::class);
         $formSearch->handleRequest($request);
+
         if ($formSearch->isSubmitted()){
             $articles= $this->getDoctrine()
                 ->getRepository(Article::class)
