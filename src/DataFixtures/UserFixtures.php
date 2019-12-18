@@ -22,7 +22,7 @@ class UserFixtures extends Fixture
             $user->setMobile($faker->phoneNumber);
             $user->setPassword($faker->password);
             $this->addReference('user_' . $i, $user);
-            $user->setPicture($faker->word);
+            $user->setPicture($faker->imageUrl(640, 480, 'people', false, 'Faker'));
             $user->setDescription($faker->text);
 
             $manager->persist($user);
