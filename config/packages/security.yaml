@@ -8,6 +8,10 @@ security:
             security: false
         main:
             anonymous: true
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+            cost: 12
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

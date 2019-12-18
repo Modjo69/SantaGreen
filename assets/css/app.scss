@@ -6,6 +6,35 @@ $primary: darken(#428bca, 20%);
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    background-color: red;
+#profile-picture {
+    position:absolute;
+    max-width: 140px;
+    max-height: 190px;
+    left:40%;
+    top:60%;
+    border-radius: 50%;
 }
+
+#background-profile {
+    border-radius: 4px;
+}
+
+#top-profile {
+    position: relative;
+}
+
+#profile-menu {
+    background-color: beige;
+    border-radius: 4px;
+}
+
+#profile-menu h4 {
+    margin:auto;
+    margin-top: 10%;
+}
+
+#menu-items {
+    display: flex;
+    justify-content: center;
+}
+
