@@ -24,6 +24,7 @@ class WorkshopFixtures extends Fixture implements DependentFixtureInterface
             $workshop->setUserMax(10);
             $workshop->setUserRegistered(0);
             $workshop->setDateTime($faker->dateTime);
+            $workshop->setCategory($this->getReference('categorie_'.random_int(1,4)));
 
             $manager->persist($workshop);
         }
