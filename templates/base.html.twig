@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Santa Green{% endblock %}</title>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -14,7 +14,6 @@
         {% include '_navbar.html.twig' %}
         {% block body %}{% endblock %}
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
         {% endblock %}
 
         <!-- Footer -->
