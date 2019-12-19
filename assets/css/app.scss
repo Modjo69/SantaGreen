@@ -8,6 +8,7 @@ $primary: darken(#428bca, 20%);
 
 /************************PROFILE PAGE*************************/
 
+
 .profile {
     padding: 5rem 0;
 }
@@ -62,12 +63,14 @@ $primary: darken(#428bca, 20%);
 .profile-settings-btn {
     font-size: 2rem;
     margin-left: 1rem;
+
 }
 
 .profile-stats {
     margin-top: 2.3rem;
     color: black;
 }
+
 
 .profile-stats li {
     display: inline-block;
@@ -87,6 +90,7 @@ $primary: darken(#428bca, 20%);
     line-height: 1.5;
     margin-top: 2.3rem;
 }
+
 
 .profile-real-name,
 .profile-stat-count,
@@ -207,57 +211,65 @@ body {
 
 
 
-
 /************************NAVBAR*************************/
 a {
-    color : black;
+  color: black;
 }
 
 
-.santa{
-    height: 80px;
+.santa {
+  height: 80px;
 }
 
 
-.navbar{
-    text-decoration: none;
-    box-shadow: 0 0 4px 0;
-    height: 90px;
-    background-image: url("../../public/images/navNoel.png");
+.navbar {
+  text-decoration: none;
+  box-shadow: 0 0 4px 0;
+  height: 90px;
+  background-image: url("../../public/images/navNoel.png");
 }
+
 .navbar a {
-    color: white;
-    font-size: 1.6em;
-    text-shadow: black 1px 0 3px;
-    font-family: oblique;
+  color: white;
+  font-size: 2.6em;
+  text-shadow: black 1px 0 3px;
+  font-family: 'merry_christmas_flakeregular';
+  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+
 }
 
-.navbar li:hover{
-    color: green!important;
+.navbar li:hover {
+  color: green !important;
 }
 
 body {
-    background-image: url("../../public/images/christmas.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat !important;
-    background-position: top !important;
-    background-size: cover !important;
+  background-image: url("../../public/images/christmas.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat !important;
+  background-position: top !important;
+  background-size: cover !important;
 }
-navbar{
-    height: 20px;
+
+navbar {
+  height: 20px;
+
 }
+
 /*****HOME_PAGE******************************/
 @font-face {
-    font-family: 'merry_christmas_flakeregular';
-    src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
-    url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'merry_christmas_flakeregular';
+  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-.tutoExemple{
-    padding: 0px;
-    margin: 0px;
+
+.tutoExemple {
+  padding: 0px;
+  margin: 0px;
 }
+
 
 .boxTuto{
     padding: 0px;
@@ -306,6 +318,7 @@ navbar{
     color:white;
     font-size: 2.5em;
     text-align: center;
+
 }
 
 /*****END_HOME_PAGE******************************/
@@ -488,31 +501,50 @@ canvas{
 //show pages
 
 .article-clean .intro p .date {
-    padding: 4px 0 4px 10px;
-    margin-left: 10px;
-    border-left: 1px solid #ddd;
+  padding: 4px 0 4px 10px;
+  margin-left: 10px;
+  border-left: 1px solid #ddd;
 }
 
 .article-clean .intro p a {
-    color: #333;
-    text-transform: uppercase;
-    padding-left: 3px;
+  color: #333;
+  text-transform: uppercase;
+  padding-left: 3px;
 }
 
 .article-clean .intro {
-    font-size: 16px;
-    margin: 0 auto 30px;
+  font-size: 16px;
+  margin: 0 auto 30px;
 }
 
 .img-fluid {
-    margin-top: 10%;
-    height: auto;
-    vertical-align: middle;
-    border-style: none;
+  margin-top: 10%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
 }
 
 .btn-workshop {
-    margin: 5%;
+  margin: 5%;
+}
+
+.card {
+  border: 1px white;
+  font-family:  "Gill Sans", sans-serif;
+
+
+}
+.card a{
+  text-decoration: none;
+ cursor: zoom-in;
+}
+
+.card:hover{
+  box-shadow: 0 40px 30px 0 rgba(0, 0, 0, 0.2), 0 35px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cardShow{
+  background-color: #1C440C;
 }
 
 
