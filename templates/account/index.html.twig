@@ -5,7 +5,51 @@
 {% block body %}
     {{ dump(app.user) }}
     <div class="container">
-        <div class="card">
+        <div class="card" style="background-color:rgb(250, 250, 250)">
+            <ul class="lightrope">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         <div class="profile">
             <div class="profile-image">
                 <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
@@ -21,22 +65,23 @@
                 </ul>
             </div>
             <div class="profile-bio">
-                <p><span class="profile-real-name"></span>{{ app.user.description }}</p></div>
+                <p><span class="profile-real-name"></span>{{ app.user.description }}</p>
+            </div>
         </div>
         </div>
         <!-- End of profile section -->
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link active" href="{{ path('user_indexuser_account') }}">Mon Profil</a>
+                <a class="nav-link active profile-menu" href="{{ path('user_indexuser_account') }}">Mon Profil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('user_indexarticle_index') }}">Mes Produits</a>
+                <a class="nav-link profile-menu" href="{{ path('user_indexarticle_index') }}">Mes Produits</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('user_indextuto_index') }}">Mes Tutoriels</a>
+                <a class="nav-link profile-menu" href="{{ path('user_indextuto_index') }}">Mes Tutoriels</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('user_indexworkshop') }}">Mes Ateliers</a>
+                <a class="nav-link profile-menu" href="{{ path('user_indexworkshop') }}">Mes Ateliers</a>
             </li>
         </ul>
     </div>
