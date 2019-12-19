@@ -21,7 +21,7 @@ class WorkshopType extends AbstractType
             ->add('picture', FileType::class)
             ->add('user_max')
             ->add('date_time')
-            ->add('address', TextType::class)
+            ->add('address', null, ['choice_label' => 'street'])
             ->add('register', SubmitType::class)
         ;
     }

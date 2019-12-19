@@ -18,7 +18,7 @@ class ArticleType extends AbstractType
             ->add('name', TextType::class)
             ->add('description', TextType::class)
             ->add('picture', FileType::class)
-            ->add('category')
+            ->add('category', null, ['choice_label' => 'name'])
             ->add('register', SubmitType::class)
         ;
     }

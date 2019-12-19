@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'account/index.html.twig' %}
 
 {% block title %}Tuto{% endblock %}
 
@@ -34,5 +34,5 @@
 
     <a href="{{ path('tuto_edit', {'id': tuto.id}) }}">edit</a>
 
-    {{ include('tuto/_delete_form.html.twig') }}
+    {{ include('user/_tuto_delete_form.html.twig') }}
 {% endblock %}

@@ -20,7 +20,7 @@ class UserFixtures extends Fixture
             $user->setLastname($faker->lastName);
             $user->setEmail($faker->email);
             $user->setMobile($faker->phoneNumber);
-            $user->setPassword($faker->password);
+            $user->setPassword('admin');
             $this->addReference('user_' . $i, $user);
             $user->setPicture($faker->word);
             $user->setDescription($faker->text);

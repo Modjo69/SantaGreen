@@ -13,45 +13,20 @@
         <div class="row" id="profile-menu">
             <h4>Username</h4>
         </div>
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                   aria-controls="pills-home" aria-selected="true">Mon profil</a>
+                <a class="nav-link active" href="{{ path('user_indexuser_account') }}">Mon Profil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                   aria-controls="pills-profile" aria-selected="false">Ajouter un produit</a>
+                <a class="nav-link" href="{{ path('user_indexarticle_index') }}">Mes Produits</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-                   aria-controls="pills-contact" aria-selected="false">Ajouter un atelier</a>
+                <a class="nav-link" href="{{ path('user_indextuto_index') }}">Mes Tutoriels</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact2" role="tab"
-                   aria-controls="pills-contact" aria-selected="false">Ajouter un tutoriel</a>
+                <a class="nav-link" href="{{ path('user_indexworkshop') }}">Mes Ateliers</a>
             </li>
         </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <h4 style="text-align:center;">My Personnal Informations</h4>
-                {{ form_start(form) }}
-                {{ form_end(form) }}
-                <h4 style="text-align:center;">My Address</h4>
-                {{ form_start(formAddress) }}
-                {{ form_end(formAddress) }}
-            </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                {{ form_start(formArticle) }}
-                {{ form_end(formArticle) }}
-            </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                {{ form_start(formWorkshop) }}
-
-                {{ form_end(formWorkshop) }}
-            </div>
-            <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab">dsd</div>
-
-        </div>
     </div>
 
 
