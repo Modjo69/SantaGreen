@@ -51,20 +51,20 @@
             </ul>
         <div class="profile">
             <div class="profile-image">
-                <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
+                <img src="{{ app.user.picture }}" alt="" class="img-fluid">
             </div>
             <div class="profile-user-settings">
                 <h1 class="profile-user-name">{{ app.user.firstname }} {{ app.user.lastname }}</h1>
             </div>
             <div class="profile-stats">
-                <ul>
+                <ul class="profile-ul">
                     <li><span class="profile-stat-count">164</span> posts</li>
                     <li><span class="profile-stat-count">188</span> followers</li>
                     <li><span class="profile-stat-count">206</span> following</li>
                 </ul>
             </div>
             <div class="profile-bio">
-                <p><span class="profile-real-name"></span>{{ app.user.description }}</p>
+                <p class="p_account"><span class="profile-real-name"></span>{{ app.user.description }}</p>
             </div>
         </div>
         </div>
