@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\Tuto;
 use App\Form\SearchCategoryType;
+use App\Form\TutoType;
 use App\Repository\TutoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,12 +16,12 @@ class TutoController extends AbstractController
 {
     /**
      * @Route("/tuto", name="tuto", methods={"GET", "POST"})
-     * @param TutoRepository $tutos
+     * @param Request $request
      * @return Response
      */
-    public function index(TutoRepository $tutos, Request $request)
+    public function index(Request $request)
     {
-        $tutos= $this->getDoctrine()
+        $tutos = $this->getDoctrine()
             ->getRepository(Tuto::class)
             ->findAll();
         $formSearch= $this-> createForm(SearchCategoryType::class);
