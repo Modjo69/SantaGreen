@@ -7,6 +7,10 @@
         <div class="text-center">
             <h1>Tutos</h1>
         </div>
+        {{ form_start(formSearch) }}
+        {{ form_row(formSearch.category) }}
+        <button type="submit">rechercher</button>
+        {{ form_end(formSearch) }}
         <div class="container">
             <div class="card-columns">
                 {% for tuto in tutos %}
