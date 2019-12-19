@@ -7,134 +7,146 @@ $primary: darken(#428bca, 20%);
 @import "~bootstrap/scss/bootstrap";
 
 
-
 #profile-picture {
-    position:absolute;
-    max-width: 140px;
-    max-height: 190px;
-    left:40%;
-    top:60%;
-    border-radius: 50%;
+  position: absolute;
+  max-width: 140px;
+  max-height: 190px;
+  left: 40%;
+  top: 60%;
+  border-radius: 50%;
 }
 
 #background-profile {
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
 #top-profile {
-    position: relative;
+  position: relative;
 }
 
 #profile-menu {
-    background-color: beige;
-    border-radius: 4px;
+  background-color: beige;
+  border-radius: 4px;
 }
 
 #profile-menu h4 {
-    margin:auto;
-    margin-top: 10%;
+  margin: auto;
+  margin-top: 10%;
 }
 
 #menu-items {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-
 
 
 body {
-    background-color: white;
-    color : white;
+  background-color: white;
+  color: white;
 
 }
-
 
 
 /************************NAVBAR*************************/
 a {
-    color : black;
+  color: black;
 }
 
 
-.santa{
-    height: 80px;
+.santa {
+  height: 80px;
 }
 
 
-.navbar{
-    text-decoration: none;
-    box-shadow: 0 0 4px 0;
-    height: 90px;
-    background-image: url("../../public/images/navNoel.png");
+.navbar {
+  text-decoration: none;
+  box-shadow: 0 0 4px 0;
+  height: 90px;
+  background-image: url("../../public/images/navNoel.png");
 }
+
 .navbar a {
-    color: white;
-    font-size: 1.6em;
-    text-shadow: black 1px 0 3px;
-    font-family: oblique;
+  color: white;
+  font-size: 2.6em;
+  text-shadow: black 1px 0 3px;
+  font-family: 'merry_christmas_flakeregular';
+  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+
 }
 
-.navbar li:hover{
-    color: green!important;
+.navbar li:hover {
+  color: green !important;
 }
 
 body {
-    background-image: url("../../public/images/christmas.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat !important;
-    background-position: top !important;
-    background-size: cover !important;
+  background-image: url("../../public/images/christmas.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat !important;
+  background-position: top !important;
+  background-size: cover !important;
 }
-navbar{
-    height: 20px;
+
+navbar {
+  height: 20px;
+
 }
+
 /*****HOME_PAGE******************************/
 @font-face {
-    font-family: 'merry_christmas_flakeregular';
-    src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
-    url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'merry_christmas_flakeregular';
+  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-.tutoExemple{
-    padding: 0px;
-    margin: 0px;
-}
-.boxTuto{
-    padding: 0px;
-    margin: 0px;
-}
-.boxCategory{
-    padding: 0px;
-    margin: 0px;
-}
-.boxHomePage{
-    margin-bottom: 20px;
-}
-.pictureCategory{
-    width: 560px;
-}
-.backgroundTitle{
 
-    width:100% ;
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+.tutoExemple {
+  padding: 0px;
+  margin: 0px;
 }
-.santaTitle{
-    color:white;
-    font-size: 8em;
-    align-self: center;
-    text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
-    transition-duration: 1s;
-    font-family: merry_christmas_flakeregular!important;
+
+.boxTuto {
+  padding: 0px;
+  margin: 0px;
 }
-#compte_a_rebours{
-    color:white;
-    font-size: 2.5em;
-    text-align: center;
+
+.boxCategory {
+  padding: 0px;
+  margin: 0px;
+}
+
+.boxHomePage {
+  margin-bottom: 20px;
+}
+
+.pictureCategory {
+  width: 560px;
+}
+
+.backgroundTitle {
+
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.santaTitle {
+  color: white;
+  font-size: 8em;
+  align-self: center;
+  text-shadow: 1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
+  transition-duration: 1s;
+  font-family: merry_christmas_flakeregular !important;
+}
+
+#compte_a_rebours {
+  color: white;
+  font-size: 2.5em;
+  text-align: center;
 }
 
 /*****END_HOME_PAGE******************************/
@@ -143,31 +155,50 @@ navbar{
 //show pages
 
 .article-clean .intro p .date {
-    padding: 4px 0 4px 10px;
-    margin-left: 10px;
-    border-left: 1px solid #ddd;
+  padding: 4px 0 4px 10px;
+  margin-left: 10px;
+  border-left: 1px solid #ddd;
 }
 
 .article-clean .intro p a {
-    color: #333;
-    text-transform: uppercase;
-    padding-left: 3px;
+  color: #333;
+  text-transform: uppercase;
+  padding-left: 3px;
 }
 
 .article-clean .intro {
-    font-size: 16px;
-    margin: 0 auto 30px;
+  font-size: 16px;
+  margin: 0 auto 30px;
 }
 
 .img-fluid {
-    margin-top: 10%;
-    height: auto;
-    vertical-align: middle;
-    border-style: none;
+  margin-top: 10%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
 }
 
 .btn-workshop {
-    margin: 5%;
+  margin: 5%;
+}
+
+.card {
+  border: 1px white;
+  font-family:  "Gill Sans", sans-serif;
+
+
+}
+.card a{
+  text-decoration: none;
+ cursor: zoom-in;
+}
+
+.card:hover{
+  box-shadow: 0 40px 30px 0 rgba(0, 0, 0, 0.2), 0 35px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cardShow{
+  background-color: #1C440C;
 }
 
 
