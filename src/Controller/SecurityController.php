@@ -49,12 +49,15 @@ class SecurityController extends AbstractController
     public function register(Request $request, UserPasswordEncoderInterface $encoder)
     {
         $newUser = new User();
+        $newUser->setPicture('null');
+        $newUser->setDescription('null');
         $form = $this->createForm(UserType::class, $newUser);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $encoded = $encoder->encodePassword($newUser, $newUser->getPassword());
             $newUser->setPassword($encoded);
+
             $newUser = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($newUser);
