@@ -37,6 +37,7 @@ class TutoFixtures extends Fixture
             $tuto->setDescription($item['description']);
             $tuto->setLink($item['link']);
             $tuto->setPicture($item['picture']);
+            $tuto->setUser($this->getReference('user_'.random_int(1,50)));
             $tuto->setCategory($this->getReference('categorie_'. random_int(1,4)));
             $manager->persist($tuto);
         }
