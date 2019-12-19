@@ -6,6 +6,12 @@
     <h1 class="h1_christmas">Create new article</h1>
 
     {{ include('user/_article_form.html.twig') }}
+    <div class="container">
+        <div class="card">
+            <h1 class="text-center">Create new article</h1>
+            {{ include('user/_tuto_form.html.twig') }}
+        </div>
+    </div>
 
     <a href="{{ path('user_indexarticle_index') }}">back to list</a>
 {% endblock %}
