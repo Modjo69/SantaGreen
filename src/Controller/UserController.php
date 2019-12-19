@@ -354,7 +354,7 @@ class UserController extends AbstractController
             $entityManager->persist($workshop);
             $entityManager->flush();
 
-            return $this->redirectToRoute('user_indexworkshop_show', ['id' => $workshop->getId()]);
+            return $this->redirectToRoute('user_indexuser_account');
         }
 
         return $this->render('user/workshop_new.html.twig', [

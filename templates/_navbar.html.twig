@@ -21,6 +21,13 @@
         </ul>
     </div>
     <div class="monCompte nav-item">
-        <a class="nav-link" href="{{ path('user_indexuser_account') }}">Mon compte</a>
+        <ul class="navbar-nav">
+            <li class="nav-item  ">
+        <a class="nav-link text-white" href="{{path('app_logout')}}">Déconnexion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ path('user_indexuser_account') }}">Mon compte</a>
+            </li>
+        </ul>
     </div>
 </nav>
