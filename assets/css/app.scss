@@ -9,6 +9,10 @@ $primary: darken(#428bca, 20%);
 $font-family: 'Montserrat Alternates', sans-serif;
 
 
+.w-25 {
+  text-align: center;
+}
+
 #user-part {
     display: flex;
     background-color: white;
@@ -308,7 +312,6 @@ navbar {
   url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 .tutoExemple {
@@ -318,7 +321,7 @@ navbar {
 }
 
 
-.boxTuto{
+.boxTuto {
   padding: 0px;
   margin: 0px;
 }
@@ -329,22 +332,18 @@ navbar {
     border-radius: 5px;
 }
 
-.boxCategory{
-    padding: 0px;
-    margin: 0px;
+.boxCategory {
+  padding: 0px;
+  margin: 0px;
 }
 
-.boxHomePage{
+.boxHomePage {
   margin-bottom: 100px;
     margin-top: 100px;
     margin-left: 135px!important;
-
 }
 
-
-
-.pictureCategory{
-
+.pictureCategory {
   max-width: 100%;
     border-radius: 5px;
 
@@ -369,13 +368,13 @@ navbar {
 
 }
 
-.santaTitle{
-  color:white;
+.santaTitle {
+  color: white;
   font-size: 8em;
   align-self: center;
-  text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green!important;
+  text-shadow: 1px 1px 2px red, 0 0 1em green, 0 0 0.2em green!important;
   transition-duration: 1s;
-  font-family: merry_christmas_flakeregular!important;
+  font-family: merry_christmas_flakeregular !important;
 }
 
 #counter_christmas{
