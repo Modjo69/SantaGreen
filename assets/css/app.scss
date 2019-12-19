@@ -78,11 +78,12 @@ $font-family: 'Montserrat Alternates', sans-serif;
 
 .profile-image {
     float: left;
-    width: calc(33.333% - 1rem);
+    width: 15vw;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 3rem;
+    margin-left: 20px;
 }
 
 .profile-image img {
@@ -94,6 +95,7 @@ $font-family: 'Montserrat Alternates', sans-serif;
 .profile-bio {
     float: left;
     width: calc(66.666% - 2rem);
+    margin-left: 0;
 }
 
 .profile-user-settings {
@@ -158,6 +160,8 @@ $font-family: 'Montserrat Alternates', sans-serif;
 .profile-menu {
     font-weight: bold;
     color: white;
+    font-size: 2em;
+    font-family: $font-family;
 }
 
 $globe-width:   12px;
@@ -648,3 +652,13 @@ footer a{
     text-decoration: none;
 }
 
+.profile-ul{
+    padding: 0;
+}
+
+.h1_christmas{
+    font-family: merry_christmas_flakeregular!important;
+    font-size: 6em;
+    color: white;
+    text-shadow: 1px 1px 2px red, 0 0 1em green, 0 0 0.2em green!important;
+}
