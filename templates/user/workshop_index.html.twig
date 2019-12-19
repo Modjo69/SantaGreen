@@ -12,8 +12,8 @@
         <a class="btn btn-danger" href="{{ path('user_indexworkshop_new') }}">Creer un nouvel atelier </a>
 
         <div class="mt-5 container">
-            <div class="card-columns">
-                {% for workshop in workshops %}
+                <div class="card-columns">
+                    {% for workshop in workshops %}
                     <div class="card">
                         <a href="">
                             <img class="card-img-top" src="{{ workshop.picture }}">
@@ -24,7 +24,8 @@
                                     {{ workshop.description }}
                                 </p>
                                 <a class="btn btn-danger" href="{{ path('user_indexworkshop_edit',{id:workshop.id}) }}">Edit</a>
-                                <a class="btn btn-danger" href="{{ path('user_indexworkshop_delete',{id:workshop.id}) }}">Delete</a>
+                                <a class="btn btn-danger"
+                                   href="{{ path('user_indexworkshop_delete',{id:workshop.id}) }}">Delete</a>
                                 {#                            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>#}
                             </div>
                         </a>

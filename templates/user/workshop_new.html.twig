@@ -4,8 +4,10 @@
 
 {% block body %}
     <h1>Create new Workshop</h1>
-
-    {{ include('user/_workshop_forn.html.twig') }}
-
+    <div class="container">
+        <div class="card">
+            {{ include('user/_workshop_forn.html.twig') }}
+        </div>
+    </div>
     <a href="{{ path('user_indexworkshop') }}">back to list</a>
 {% endblock %}

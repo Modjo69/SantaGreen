@@ -151,7 +151,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('tuto');
         }
 
-        return $this->render('tuto/tuto_edit.html.twig', [
+        return $this->render('user/tuto_edit.html.twig', [
             'tuto' => $tuto,
             'form' => $form->createView(),
         ]);
@@ -187,7 +187,7 @@ class UserController extends AbstractController
     {
         $userId = $user->getId();
         $articles = $this->getDoctrine()
-            ->getRepository(Tuto::class)
+            ->getRepository(Article::class)
             ->findBy(
                 ['user' => $userId]
             );
@@ -254,7 +254,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('article_index');
         }
 
-        return $this->render('article/tuto_edit.html.twig', [
+        return $this->render('user/article_edit.html.twig', [
             'article' => $article,
             'form' => $form->createView(),
         ]);
