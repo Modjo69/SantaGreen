@@ -3,8 +3,8 @@
 {% block title %}New Tuto{% endblock %}
 
 {% block body %}
-    <h1>Create new Tuto</h1>
     <div class="card">
+        <h1 class="text-center">Create new Tuto</h1>
         {{ include('user/_tuto_form.html.twig') }}
     </div>
     <a href="{{ path('tuto_index') }}">back to list</a>
