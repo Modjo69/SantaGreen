@@ -21,15 +21,21 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-             return $this->redirectToRoute('target');
+            return $this->redirectToRoute('target');
         }
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
+        //last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        $newUser = new User();
+        $form = $this->createForm(UserType::class, $newUser, [
+            'action' => $this->generateUrl('app_register')
+        ]);
+
+        return $this->render('security/login.html.twig', ['last_username' => $lastUsername,
+            'error' => $error, 'form' => $form->createView(),]);
     }
 
     /**
@@ -55,14 +61,15 @@ class SecurityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $encoded = $encoder->encodePassword($newUser, $newUser->getPassword());
             $newUser->setPassword($encoded);
+            $newUser->setPicture('/images/renne.jpg');
+            $newUser->setDescription('Vive Santa Green!');
             $newUser = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($newUser);
             $em->flush();
+            return $this->redirectToRoute('app_home');
         }
 
-        return $this->render('security/register.html.twig', [
-           'form' => $form->createView(),
-        ]);
+        return $this->redirectToRoute('app_login');
     }
 }
