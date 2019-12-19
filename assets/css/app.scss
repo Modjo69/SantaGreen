@@ -6,73 +6,275 @@ $primary: darken(#428bca, 20%);
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+/************************PROFILE PAGE*************************/
 
+.profile {
+    padding: 5rem 0;
+}
 
-#profile-picture {
-    position:absolute;
-    max-width: 140px;
-    max-height: 190px;
-    left:40%;
-    top:60%;
+.profile::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.profile-image {
+    float: left;
+    width: calc(33.333% - 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.profile-image img {
     border-radius: 50%;
 }
 
-#background-profile {
-    border-radius: 4px;
+.profile-user-settings,
+.profile-stats,
+.profile-bio {
+    float: left;
+    width: calc(66.666% - 2rem);
 }
 
-#top-profile {
-    position: relative;
+.profile-user-settings {
+    margin-top: 0.4rem;
 }
 
-#profile-menu {
-    background-color: beige;
-    border-radius: 4px;
+.profile-user-name {
+    display: inline-block;
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: black;
 }
 
-#profile-menu h4 {
-    margin:auto;
-    margin-top: 10%;
+.profile-edit-btn {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    border: 0.1rem solid #dbdbdb;
+    border-radius: 0.3rem;
+    padding: 0 2.4rem;
+    margin-left: 2rem;
+    color: black;
 }
 
-#menu-items {
-    display: flex;
-    justify-content: center;
+.profile-settings-btn {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.profile-stats {
+    margin-top: 2.3rem;
+    color: black;
+}
+
+.profile-stats li {
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.profile-stats li:last-of-type {
+    margin-right: 0;
+}
+
+.profile-bio {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 2.3rem;
+}
+
+.profile-real-name,
+.profile-stat-count,
+.profile-edit-btn {
+    font-weight: 600;
+}
+
+.profile-menu {
+    font-weight: bold;
+    color: white;
 }
 
 
+
+
+$globe-width:   12px;
+$globe-height:  28px;
+$globe-spacing: 40px;
+$globe-spread: 3px;
+$light-off-opacity: 0.4;
+
+body {
+    background: #000;
+}
+.lightrope {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    margin: -15px 0 0 0;
+    padding: 0;
+    pointer-events: none;
+    width: 100%;
+    li {
+        position: relative;
+        animation-fill-mode: both;
+        animation-iteration-count:infinite;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: $globe-width;
+        height: $globe-height;
+        border-radius: 50%;
+        margin: $globe-spacing/2;
+        display: inline-block;
+        background: rgba(0,247,165,1);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);
+        animation-name: flash-1;
+        animation-duration: 2s;
+        &:nth-child(2n+1) {
+            background: rgba(0,255,255,1);
+            box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.5);
+            animation-name: flash-2;
+            animation-duration: 0.4s;
+        }
+        &:nth-child(4n+2) {
+            background: rgba(247,0,148,1);
+            box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);
+            animation-name: flash-3;
+            animation-duration: 1.1s;
+        }
+        &:nth-child(odd) {
+            animation-duration: 1.8s;
+        }
+        &:nth-child(3n+1) {
+            animation-duration: 1.4s;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            background: #222;
+            width: ($globe-width - 2);
+            height: $globe-height/3;
+            border-radius: 3px;
+            top: (0 - ($globe-height/6));
+            left: 1px;
+        }
+        &:after {
+            content: "";
+            top: (0 - $globe-height/2);
+            left: $globe-width - 3;
+            position: absolute;
+            width: $globe-spacing + 12;
+            height: ($globe-height/3 * 2);
+            border-bottom: solid #222 2px;
+            border-radius: 50%;
+        }
+        &:last-child:after {
+            content: none;
+        }
+        &:first-child {
+            margin-left: -$globe-spacing;
+        }
+    }
+}
+@keyframes flash-1 {
+    0%, 100% { background: rgba(0,247,165,1);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);}
+    50% { background: rgba(0,247,165,$light-off-opacity);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,0.2);}
+}
+@keyframes flash-2 {
+    0%, 100% { background: rgba(0,255,255,1);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,1);}
+    50% { background: rgba(0,255,255,$light-off-opacity);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.2);}
+}
+@keyframes flash-3 {
+    0%, 100% { background: rgba(247,0,148,1);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);}
+    50% { background: rgba(247,0,148,$light-off-opacity);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,0.2);}
+}
+
+
+
+
+
+
+/************************NAVBAR*************************/
+a {
+    color : black;
+}
+
+
+.santa{
+    height: 80px;
+}
+
+
+.navbar{
+    text-decoration: none;
+    box-shadow: 0 0 4px 0;
+    height: 90px;
+    background-image: url("../../public/images/navNoel.png");
+}
+.navbar a {
+    color: white;
+    font-size: 1.6em;
+    text-shadow: black 1px 0 3px;
+    font-family: oblique;
+}
+
+.navbar li:hover{
+    color: green!important;
+}
+
+body {
+    background-image: url("../../public/images/christmas.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat !important;
+    background-position: top !important;
+    background-size: cover !important;
+}
+navbar{
+    height: 20px;
+}
 /*****HOME_PAGE******************************/
 @font-face {
-  font-family: 'merry_christmas_flakeregular';
-  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
-  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
+    font-family: 'merry_christmas_flakeregular';
+    src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+    url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 .tutoExemple{
-  padding: 0px;
-  margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .boxTuto{
-  padding: 0px;
-  margin: 0px;
-
+    padding: 0px;
+    margin: 0px;
 }
 
 .boxCategory{
-  padding: 0px;
-  margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .boxHomePage{
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .pictureCategory{
-
-  width: 560px;
+    width: 560px;
 }
 
 .backgroundTitle{
@@ -92,306 +294,197 @@ $primary: darken(#428bca, 20%);
 }
 
 .santaTitle{
-  color:white;
-  font-size: 8em;
-  align-self: center;
-  text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
-  transition-duration: 1s;
-  font-family: merry_christmas_flakeregular!important;
+    color:white;
+    font-size: 8em;
+    align-self: center;
+    text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
+    transition-duration: 1s;
+    font-family: merry_christmas_flakeregular!important;
 }
 
 #compte_a_rebours{
-  color:white;
-  font-size: 2.5em;
-  text-align: center;
-}
-/*****END_HOME_PAGE******************************/
-body {
-    background-color: white;
-    color : black;
-}
-
-
-
-/************************NAVBAR*************************/
-a {
-    color : black;
-}
-
-.santa {
-    background:#3ac6f4;
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    position:relative;
-    left:0;right:0;margin:0 auto;
-    bottom:0;
-}
-
-.santa .snow {
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    left: 18px;
-    top: 44px;
-}
-
-
-.santa .snow:after {
-    width: 6px;
-    height: 6px;
-    content: "";
-    display: inline-block;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: -14px;
-    left: 0px;
-}
-
-.santa .snow:before {
-    width: 4px;
-    height: 4px;
-    content: "";
-    display: inline-block;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -12px;
-    left: -11px;
-}
-
-.santa .hat {
-    width: 64px;
-    height: 31px;
-    border-radius: 200px 200px 0 0;
-    background: darkgreen;
-    margin: 0 auto;
-    top: -11px;
-    position: relative;
-    left: 5px;
-    z-index:20;
-}
-
-.santa .hat:after {
-    width: 60px;
-    height: 15px;
-    border-radius: 20px;
-    content: "";
-    display: block;
-    background: white;
-    position: relative;
-    top: 22px;
-    left: -3px;
-}
-
-.santa .face {
-    width: 54px;
-    height: 57px;
-    background: white;
-    border-radius: 0px 0px 50px 50px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 20;
-    top: -6px;
-}
-
-.santa .face .eyes {
-    background:#f1ddd5;
-    width:45px;
-    height:15px;
-    margin:0 auto;
-    position:relative;
-    left:-1px;
+    color:white;
+    font-size: 2.5em;
     text-align: center;
-    top:4px;
-    padding-top: 0px;
 }
 
-.santa .face .eyes:after, righteye {
-    width: 8px;
-    height: 6px;
-    background: transparent;
-    box-shadow: 0px -2px #793623;
-    content: "";
-    display:inline-block;
-    margin:0 auto;
-    border-radius: 50%;
-}
+/*****END_HOME_PAGE******************************/
 
-.santa .face .eyes:before, lefteye {
-    width: 8px;
-    height: 6px;
-    background: transparent;
-    box-shadow: 0px -2px #793623;
-    content: "";
-    display:inline-block;
-    margin:0 auto;
-    border-radius: 50%;
-    margin-right:5px;
-}
 
-.santa .mouth {
-    background:#a31f2b;
-    border-radius:50%;
-    width:6px;
-    height:6px;
-    position:absolute;
-    bottom:20px;
-    right:17px;
-}
-
-.santa .body {
-    width: 93px;
-    height: 84px;
-    background: darkgreen;
-    border-radius: 90px 90px 0px 0px;
+/**********************LOGIN******************************************/
+.login_papa{
     position: absolute;
-    bottom: 0;
+    width: 10vw;
+}
+
+.title_login{
+    font-family: 'merry_christmas_flakeregular';
+    font-size: 8em;
+}
+section {
+    &.custom {
+        .up {
+            color: #55DD11;
+        }
+        .card {
+            text-align: center;
+            color: #ffffff;
+            width: 100%;
+            height: 500px;
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.09);
+        }
+        .flipper{
+            padding-left: 0px;
+            padding-right: 0px;
+            margin: auto;
+            perspective: 1000px;
+            display: flex;
+        }
+        /* flip the pane when hovered */
+        .flipper.flip .card {
+            transform: rotateY(180deg);
+        }
+        .front,
+        .back {
+            width: 100%;
+            padding: 5px;
+            backface-visibility: hidden;
+            position: absolute;
+            color: white;
+            top: 0;
+            left: 0;
+        }
+        /* front pane, placed above back */
+        .front {
+            z-index: 2;
+            /* for firefox 31 */
+            transform: rotateY(0deg);
+            height: 100%;
+        }
+        /* back, initially hidden pane */
+        .back {
+            transform: rotateY(180deg);
+            height: 100%;
+        }
+        .goback {
+            position: absolute;
+            bottom: 0px;
+            padding-left: 20px;
+            left: 0px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.login_bg{
+    height: 100vh;
+}
+
+.presentation {
+    width: auto;
+    padding: 50px 50px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.p_presentation{
+    font-size: 1.6em;
+}
+
+.button {
+    margin-top: 20px;
+    display: inline-block;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    min-width:100px;
+    padding: 22px 33px;
+    font-family: 'Lobster', cursive;
+    font-size: 26px;
+    line-height: 26px;
+    text-decoration: none;
+    color: #FFF;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+    background: #5e0d0c;
+    outline: none;
+    border-radius: 15px;
+    border: 1px solid #4c0300;
+    box-shadow:
+            inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+            inset 0 0 6px #a23227, /* inner glow */
+            inset 0 80px 80px -40px #ac3223, /* gradient */
+            1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+
+    position: relative;
+    overflow: visible; /* IE9 & 10 */
+    -webkit-transition: 500ms linear;
+    -moz-transition: 500ms linear;
+    -o-transition: 500ms linear;
+    transition: 500ms linear;
+}
+
+.button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -7px;
+    left: -3px;
     right: 0;
-    left: 0;
-    margin: 0 auto;
-    text-align:center;
-    z-index:10;
-}
-
-.santa .body:after {
-    width: 5px;
-    height: 5px;
-    background: white;
-    border-radius: 50%;
-    display: inline-block;
-    position: absolute;
-    top: 68px;
-    z-index: 50;
-    content: "";
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.santa .body:before {
-    width: 5px;
-    height: 5px;
-    background: white;
-    border-radius: 50%;
-    display: inline-block;
-    position: absolute;
-    top: 55px;
-    z-index: 50;
-    content: "";
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.santa .hat .hat-end {
-    width: 13px;
-    height: 32px;
-    content: "";
-    background: darkgreen;
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    top: 15px;
-    border-radius: 0px 11px 0px 0px;
-}
-
-.santa .hat .hat-end:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: white;
-    content: "";
-    display: inline-block;
-    top: 30px;
-    position: absolute;
-    left: 0px;
-    z-index: 11;
-}
-
-.circles {
-    background: #a31f2b;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    z-index: 9;
-    position: absolute;
-    right: -6px;
-    top: 12px;
-}
-
-.circles:after {
-    background:white;
-    width:40px;
-    height:40px;
-    right:0;
-    top:50px;
-    content:"";
-    border-radius:50%;
-}
-
-.dirty-overflow {
-    overflow: hidden;
-    width: 120px;
-    height: 76px;
-    border-radius: 0px 0px 105px 105px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-
-
-
-.santa .hat .hat-end:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: white;
-    content: "";
-    display: inline-block;
-    top: 30px;
-    position: absolute;
-    left: 0px;
-    z-index: 11;
-}
-
-.circles {
-    background: #a31f2b;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    z-index: 9;
-    position: absolute;
-    right: -6px;
-    top: 12px;
+    height: 23px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAXCAYAAACS5bYWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABFpJREFUeNrUV0tIo1cUvpkYjQ4xxSA6DxuNqG0dtaUKOgs3s6i0dFd3pSsXdjeIixakiGA34sZuXCkoONLFwJTK4GMYLYXg29gatTpiXurkbd7vv9/5ub+IxuhA7eiFQ5Kbc8/57ne/e87/ywRBYLdl3GG3aNwqsLJ0k0tLS+fmcnNzWUVFBVMoFGx2djarvLxcm5OTw+bm5iytra2xc4ExNjY27iqVyvvwK6CpeDzuCYVC1urq6qDA9UcfPp+PHR4esmAwKK6tr68/l5/8rgQ2Ozub1dbWyiYmJooaGxt/VqvV38jlchX9l0qlwoFA4DWS/RKLxRxFRUVf5+XlPcaaT2AP0sVPJBL2SCRiAPBpu93+vKamZo/Ae71eZjabWV1dXVqw7CKwp43ksrCw8Bhg7MJ/PLDZ5PHx8cz29vYT5JGD/bSYLgTrcDgYdk6siSc6NjZWDaAe4ZoHQL+cmZnRpZPnhWDpD8kw7uKo9ML/NMCsd2tr61vkzboMrEyv138M7TyLRqMWMBsX3sMgaZhMpp+AR5EJrCocDpuEGzKg4x8khs+CVWxubvZfR9JkMik4nU7BarUKLpeLmLsKuwIqTLynp4fqmIzASrqQT09Pf1VVVfX0KsWZ6uHBwQHTaDSsoKAgo6/H4xHLEcrVyRwuEisrKzs5XrrIVAVwiUVDKRRrL+YI32ewdVhMApuHWvcj6vids6J2u90MF4yBHUZNgKoEBaRBQalJqFSqtJfUYrGIlQX+ydXVVTN+u0tKSjQNDQ1axJVl2iTypebn55d7e3v/kqoDgZU1NTU9LCws/Py0M+2ekuGincxJ3yF+18jIyHJLS0slQJUWFxczrBeBE0vE5tHRkbixlZWVfSR8gTX/0P5gH7S1tX3Z3t7+BW8qAvwSfr8/jA0EIRM/qoFtampqbW9vTw+XA+ojUruVd3Z2tvb19T2TQFEim81GgVJoCvvj4+NLOJZgaWmpemdn5y3a6BbcnJDAw8HBwac6ne6eqCW5XDwB3qVSqM9/DAwMUNy/eVLabT7sI25qwgujThCBhWE+mAt2yNc4SQKSZrOQQE1HS22VJkmPAGTr7+//fX19fRk+Zgq0trbGeFAKEAQT98BSqKOj47vm5uaa/Px8JeIk4GcaHh6eWlxcfAU/A8xG67BxAX3fwdcbYUpSDJ06Z49Ak8ZC3OL8f3YiA4PBYKdLQ2AJ9OTk5GpXV9cQiCVh79M94QtlPLDUE/1gPNrd3f0W33W4cBoco48zQuy/IZYAMnGqlSc4c66L9JruQUaSARXeT8HGKzxAqFBekni6+h46+pMzGiJGMgTOJh1yU/KNEGDvZWvfBawkA9ppwGg0mrRa7SOI2g+gxOgbJIpdFpj72PnxSnPX8vqRxTURgBQWKisrH+GThOm+CtAzoK/9/Uiqq/6hoaHfdnd3jaOjo7/yY7yxbwqkWy3sQzpS2C6YirwvUJk0y7hurfyGRrnduPGvAAMASmo8wzeVwfsAAAAASUVORK5CYII=) no-repeat 0 0,
+    url(data:image/png;base64,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) no-repeat 50% 0,
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAXCAYAAACFxybfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAodJREFUeNrsVb1rWlEUv2pN/GqspKRSKFYXWzEloIWif0Fn6dJChQ7OQil0qd3EzcEpg0OgdHDr4CQODk7VRlLMEIVqApX4We0zflR9/Z1Ui4T34ksaaAYP/Hzc673n/M6550PG8zz73yKjn0wm83fDYDAwo9HINBrNnwOQg4MDs0ql2lQqlfdAWont7ng8Pjw+Ps44nc4G1pI9EXWaSOzt7TGO42aH5Pv7+08ajUZ0MBiUeXEZd7vdL5VK5fX29rZ+5tQiEmdxKrlcjsEYczgcynK5/BKKv/IXFNz/XiqVXkHdjUuRIA9SqdRD8or/R8Ez9fr9fqHVakUR4c2z0REjIQuHw2ZcrPBXLCA0RHTezEdHjIQqkUhEr9I4HOILhQLf6/VoOUFEvDMiQiToDx1Cdz+bzZ6bUFarlel0OkkVUK/XWbvdPoVer5fh3ntsfwJ+CJ2XA4p0Op1bpBgJyxDehQQ6nQ5DZXHBYDBZq9V+EhFUndnr9drEqoc2bwJbwGPgtohuVSwWe2Gz2TZMJpNgRKi6qtUqg2EWj8dTgUDgo0KhWPN4PC70EvXOzs67fD6/S6kiRIKeZA1YJ2MiJNbdbvfTUCjkV6vVK2hcDF8GI2w0GrGTkxM2HA5PDxaLxSOfz/cWEfk81X0XIMMFgJJ/srBjCgk8IdcfuVyuZ36//7nFYtkQyAMumUzuRiKRD0jMFLa+AZOpYwqgB/ziBVqmVBKUO7eAB/R0WG/Z7XaTVqtdbTabHJL6EK2djBaBPHA0NSqpbUsiMUeEBgpF4Q5AbZrmSJ/yEWgBTaBNHl9kdkgmMUeG7qwAq9PqovceTA3zlxlgsuswyuXsGsiSxJLEkoSY/BZgAEjRodi+uBruAAAAAElFTkSuQmCC) no-repeat 100% 0;
 
 }
+.button:hover {
+    background: #a61715;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.75), 0 0 40px #FFF;
+    box-shadow:
+            inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+            inset 0 0 6px #da3b2c, /* inner glow */
+            inset 0 80px 80px -40px #dd4330, /* gradient */
+            1px 1px 3px rgba(0,0,0,0.75); /* shadow */
 
+}
+.button:focus {
+    outline: none; /*FF*/
+}
+.button:active {
+    box-shadow:
+            inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+            inset 0 0 6px #da3b2c, /* inner glow */
+            inset 0 80px 80px -40px #dd4330, /* gradient */
+            0px 1px 0px rgba(255,255,255,0.25); /* shadow */
 
-
-.circles:after {
-    background:white;
-    width:40px;
-    height:40px;
-    right:0;
-    top:50px;
-    content:"";
-    border-radius:50%;
+    -webkit-transition: 50ms linear;
+    -moz-transition: 50ms linear;
+    -o-transition: 50ms linear;
+    transition: 50ms linear;
 }
 
-.dirty-overflow {
-    overflow: hidden;
-    width: 120px;
-    height: 76px;
-    border-radius: 0px 0px 105px 105px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
+canvas{
+    position:absolute;top:0;left:0;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(bottom, rgb(23, 82, 145) 0%, rgb(6, 0, 64) 84%);
+    background-image: -o-linear-gradient(bottom, rgb(23, 82, 145) 0%, rgb(6, 0, 64) 84%);
+    background-image: -moz-linear-gradient(bottom, rgb(23, 82, 145) 0%, rgb(6, 0, 64) 84%);
+    background-image: -webkit-linear-gradient(bottom, rgb(23, 82, 145) 0%, rgb(6, 0, 64) 84%);
+    background-image: -ms-linear-gradient(bottom, rgb(23, 82, 145) 0%, rgb(6, 0, 64) 84%);
 
+    background-image: -webkit-gradient(
+                    linear,
+                    left bottom,
+                    left top,
+                    color-stop(0, rgb(23, 82, 145)),
+                    color-stop(0.84, rgb(6, 0, 64))
+    );
+}
 //show pages
 
 .article-clean .intro p .date {

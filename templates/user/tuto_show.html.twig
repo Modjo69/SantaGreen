@@ -1,0 +1,38 @@
+{% extends 'account/index.html.twig' %}
+
+{% block title %}Tuto{% endblock %}
+
+{% block body %}
+    <h1>Tuto</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ tuto.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ tuto.name }}</td>
+        </tr>
+        <tr>
+            <th>Link</th>
+            <td>{{ tuto.link }}</td>
+        </tr>
+        <tr>
+            <th>Category</th>
+            <td>{{ tuto.category }}</td>
+        </tr>
+        <tr>
+            <th>Picture</th>
+            <td>{{ tuto.picture }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tuto') }}">back to list</a>
+
+    <a href="{{ path('tuto_edit', {'id': tuto.id}) }}">edit</a>
+
+    {{ include('user/_tuto_delete_form.html.twig') }}
+{% endblock %}
