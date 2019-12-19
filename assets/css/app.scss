@@ -7,8 +7,12 @@ $primary: darken(#428bca, 20%);
 @import "~bootstrap/scss/bootstrap";
 
 @font-face {
-  font-family: "MerryChristmasFlake";
-  src: url("../../public/font/MerryChristmasFlake.ttf") format("ttf")
+  font-family: 'merry_christmas_flakeregular';
+  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 body {
@@ -49,7 +53,8 @@ width: 560px;
   width:100% ;
   height: 800px;
   display: flex;
-align-item: center;
+  align-items: center;
+  justify-content: space-around;
 
 
 }
@@ -58,8 +63,11 @@ align-item: center;
   color:white;
   font-size: 8em;
   align-self: center;
+  text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
+  transition-duration: 1s;
 
-  font-family: MerryChristmasFlake!important;
+
+  font-family: merry_christmas_flakeregular!important;
 }
 
 
