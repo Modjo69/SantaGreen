@@ -15,6 +15,7 @@ use App\Form\UserType;
 use App\Form\WorkshopType;
 use App\Repository\TutoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -212,11 +213,26 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $picture = $form['picture']->getData();
+
+            if ($picture) {
+                $newFilename = 'workshop-' . uniqid() . '.' . $picture->guessExtension();
+
+                try {
+                    $picture->move(
+                        $this->getParameter('picture_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+                $article->setPicture('/images/workshop/' . $newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
 
-            return $this->redirectToRoute('article_index');
+            return $this->redirectToRoute('user_indexarticle_show', ['id' => $article->getId()]);
         }
 
         return $this->render('user/article_new.html.twig', [
@@ -317,11 +333,28 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $picture = $form['picture']->getData();
+
+            if ($picture) {
+                $newFilename = 'workshop-' . uniqid() . '.' . $picture->guessExtension();
+
+                try {
+                    $picture->move(
+                        $this->getParameter('picture_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+                $workshop->setPicture('/images/workshop/' . $newFilename);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
+            $workshop->setUserRegistered(0);
             $entityManager->persist($workshop);
             $entityManager->flush();
 
-            return $this->redirectToRoute('workshop_index');
+            return $this->redirectToRoute('user_indexworkshop_show', ['id' => $workshop->getId()]);
         }
 
         return $this->render('user/workshop_new.html.twig', [
@@ -356,7 +389,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('workshop_index');
+            return $this->redirectToRoute('user_indexworkshop_index');
         }
 
         return $this->render('user/workshop_edit.html.twig', [
@@ -379,6 +412,6 @@ class UserController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('workshop_index');
+        return $this->redirectToRoute('user_indexworkshop_index');
     }
 }
