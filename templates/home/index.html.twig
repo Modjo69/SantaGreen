@@ -33,20 +33,19 @@
     <div class="row align-items-center row boxHome ">
 
         <div class="boxTuto col-6">
+
             <div class="row no-gutters align-items-end">
-                <div class="tutoExemple col-6 m-0"><img class="pictureTuto" src="/images/sapin.jpg"></div>
-                <div class="tutoExemple col-6 m-0"><img class="pictureTuto" src="/images/sapin.jpg"></div>
-                <div class="tutoExemple col-6 m-0"><img class="pictureTuto" src="/images/sapin.jpg"></div>
-                <div class="tutoExemple col-6 m-0"><img class="pictureTuto" src="/images/sapin.jpg"></div>
+    {% for tuto in category.tutos |slice(0,4)%}
+                <div class="tutoExemple col-6 m-0"><a href="{{ tuto.link }}"><img class="pictureTuto" src="{{ tuto.picture }}"></a></div>
+    {% endfor %}
             </div>
         </div>
         <div class="boxCategory col-6 row"><img class="pictureCategory " src="{{ category.picture}}"></div>
-
     </div>
 </div>
-
     {% endfor %}
 
+{% endblock %}
 {% block javascripts %}
     {{ encore_entry_script_tags('counter') }}
 {% endblock %}
