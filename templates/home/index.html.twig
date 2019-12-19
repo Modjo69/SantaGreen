@@ -25,17 +25,33 @@
         </div>
     </div>
 
-    <section class="portfolio-block photography">
-        <div class="container">
-            <div class="row no-gutters">
-                {% for workshop in workshops %}
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover">
-                        <a href="{{ path('workshop_show', {'id': workshop.id}) }}"><img class="img-fluid image"
-                                                                                      src="{{ workshop.picture }}"/></a>
+<div class="container mt-5">
+    <h2 class="title_login text-white text-center mb-5 ">Les deniers ajouts </h2>
+    <div class="card-columns">
+
+        {% for article in articles %}
+            <div class="card">
+                <a href="{{ path('article_show', {'id': article.id}) }}">
+                    <div id="product-hover">
+                        <img class="card-img-top" src="{{ article.picture }}">
+                        <a href=""><span><i class="fas fa-heart"></i></span></a>
                     </div>
-                {% endfor %}
+                    <div id="user-part">
+                        <img id="userPost" src="{{ article.picture }}"/>
+                        <a href=""><p><strong>{{ article.user.firstname }} {{ article.user.lastname }}</strong></p></a>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">{{ article.name }}</h3>
+                        <h5 class="card-title">{{ article.category.name }}</h5>
+                        <p class="card-text">
+                            {{ article.description }}
+                        </p>
+                        {#                            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>#}
+                    </div>
+                </a>
             </div>
-        </div>
+        {% endfor %}
+    </div>
     </section>
 
 
