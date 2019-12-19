@@ -144,6 +144,15 @@ navbar{
 
 
 /**********************LOGIN******************************************/
+.login_papa{
+    position: absolute;
+    width: 10vw;
+}
+
+.title_login{
+    font-family: 'merry_christmas_flakeregular';
+    font-size: 8em;
+}
 section {
     &.custom {
         .up {
