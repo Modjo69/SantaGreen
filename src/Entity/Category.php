@@ -38,9 +38,21 @@ class Category
      */
     private $articles;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Tuto", mappedBy="category")
+     */
+    private $tutos;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Workshop", mappedBy="category")
+     */
+    private $workshops;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
+        $this->tutos = new ArrayCollection();
+        $this->workshops = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -109,6 +121,68 @@ class Category
             // set the owning side to null (unless already changed)
             if ($article->getCategory() === $this) {
                 $article->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tuto[]
+     */
+    public function getTutos(): Collection
+    {
+        return $this->tutos;
+    }
+
+    public function addTuto(Tuto $tuto): self
+    {
+        if (!$this->tutos->contains($tuto)) {
+            $this->tutos[] = $tuto;
+            $tuto->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTuto(Tuto $tuto): self
+    {
+        if ($this->tutos->contains($tuto)) {
+            $this->tutos->removeElement($tuto);
+            // set the owning side to null (unless already changed)
+            if ($tuto->getCategory() === $this) {
+                $tuto->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Workshop[]
+     */
+    public function getWorkshops(): Collection
+    {
+        return $this->workshops;
+    }
+
+    public function addWorkshop(Workshop $workshop): self
+    {
+        if (!$this->workshops->contains($workshop)) {
+            $this->workshops[] = $workshop;
+            $workshop->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWorkshop(Workshop $workshop): self
+    {
+        if ($this->workshops->contains($workshop)) {
+            $this->workshops->removeElement($workshop);
+            // set the owning side to null (unless already changed)
+            if ($workshop->getCategory() === $this) {
+                $workshop->setCategory(null);
             }
         }
 

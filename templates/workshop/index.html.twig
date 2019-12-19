@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Workshop index{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="text-center">
+            <h1>Ateliers</h1>
+        </div>
+
+    <div class="w-25 m-auto">
+        {{ form_start(formSearch) }}
+        {{ form_row(formSearch.category) }}
+        <button type="submit">rechercher</button>
+        {{ form_end(formSearch) }}
+    </div>
+
+    <div class="mt-5 container">
+        <div class="card-columns">
+            {% for workshop in workshops %}
+                <div class="card">
+                    <a href="">
+                        <img class="card-img-top" src="{{ workshop.picture }}">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ workshop.name }}</h3>
+                            <h5 class="card-title">{{ workshop.category.name }}</h5>
+                            <p class="card-text">
+                                {{ workshop.description }}
+                            </p>
+                            {#                            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>#}
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

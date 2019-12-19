@@ -5,11 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -58,11 +59,27 @@ class User
      */
     private $workshops;
 
+    /**
+     * @ORM\Column(type="string", length=255, options={"default": null})
+     */
+    private $picture;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Tuto", mappedBy="user")
+     */
+    private $tutos;
+
     public function __construct()
     {
         $this->address = new ArrayCollection();
         $this->article = new ArrayCollection();
         $this->workshops = new ArrayCollection();
+        $this->tutos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -222,4 +239,113 @@ class User
 
         return $this;
     }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Returns the roles granted to the user.
+     *
+     *     public function getRoles()
+     *     {
+     *         return ['ROLE_USER'];
+     *     }
+     *
+     * Alternatively, the roles might be stored on a ``roles`` property,
+     * and populated in any number of different ways when the user object
+     * is created.
+     *
+     * @return (Role|string)[] The user roles
+     */
+    public function getRoles()
+    {
+        // TODO: Implement getRoles() method.
+        return [];
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     *
+     * This can return null if the password was not encoded using a salt.
+     *
+     * @return string|null The salt
+     */
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        // TODO: Implement getUsername() method.
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     *
+     * This is important if, at any given point, sensitive information like
+     * the plain-text password is stored on this object.
+     */
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * @return Collection|Tuto[]
+     */
+    public function getTutos(): Collection
+    {
+        return $this->tutos;
+    }
+
+    public function addTuto(Tuto $tuto): self
+    {
+        if (!$this->tutos->contains($tuto)) {
+            $this->tutos[] = $tuto;
+            $tuto->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTuto(Tuto $tuto): self
+    {
+        if ($this->tutos->contains($tuto)) {
+            $this->tutos->removeElement($tuto);
+            // set the owning side to null (unless already changed)
+            if ($tuto->getUser() === $this) {
+                $tuto->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
