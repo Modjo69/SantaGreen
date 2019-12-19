@@ -48,7 +48,7 @@ class ArticleController extends AbstractController
      */
     public function show(Article $article): Response
     {
-        return $this->render('workshop/show.html.twig', [
+        return $this->render('article/show.html.twig', [
             'article' => $article,
         ]);
     }
