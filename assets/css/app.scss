@@ -307,18 +307,44 @@ navbar {
 
 .santaTitle{
     color:white;
-    font-size: 8em;
+    font-size: 10em;
     align-self: center;
     text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
     transition-duration: 1s;
     font-family: merry_christmas_flakeregular!important;
 }
 
-#compte_a_rebours{
-    color:white;
-    font-size: 2.5em;
-    text-align: center;
+#counter_christmas{
+    font-size: 4em;
+    color: white;
+}
 
+#clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#clockdiv > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #ff180e;
+    display: inline-block;
+}
+
+#clockdiv div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #831810;
+    display: inline-block;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
 }
 
 /*****END_HOME_PAGE******************************/
@@ -331,8 +357,12 @@ navbar {
 }
 
 .title_login{
-    font-family: 'merry_christmas_flakeregular';
+    color:white;
     font-size: 8em;
+    align-self: center;
+    text-shadow:1px 1px 2px red, 0 0 1em #4985ae, 0 0 0.2em #ff180e;
+    transition-duration: 1s;
+    font-family: merry_christmas_flakeregular!important;
 }
 section {
     &.custom {
@@ -542,9 +572,5 @@ canvas{
 .card:hover{
   box-shadow: 0 40px 30px 0 rgba(0, 0, 0, 0.2), 0 35px 50px 0 rgba(0, 0, 0, 0.19);
 }
-
-
-
-
 
 
