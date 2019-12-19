@@ -1,13 +1,13 @@
 {% extends 'account/index.html.twig' %}
 
-{% block title %}Edit article{% endblock %}
+{% block title %}Modification d'un article{% endblock %}
 
 {% block body %}
-    <h1>Edit article</h1>
+    <h1>Modification de l'article</h1>
 
     {{ include('user/_tuto_form.html.twig.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <a href="{{ path('article_index') }}">Retour</a>
 
     {{ include('user/_tuto_delete_form.html.twig') }}
 {% endblock %}

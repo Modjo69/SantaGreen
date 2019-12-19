@@ -1,11 +1,11 @@
 {% extends 'account/index.html.twig' %}
 
-{% block title %}New Tuto{% endblock %}
+{% block title %}Nouveau tutoriel{% endblock %}
 
 {% block body %}
-    <h1 class="h1_christmas">Create new Tuto</h1>
+    <h1 class="h1_christmas">Créer un nouveau tuto</h1>
     <div class="card">
         {{ include('user/_tuto_form.html.twig') }}
     </div>
-    <a href="{{ path('tuto_index') }}">back to list</a>
+    <a href="{{ path('tuto_index') }}">Retour</a>
 {% endblock %}
