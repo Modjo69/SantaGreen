@@ -7,7 +7,6 @@
     <div class="container">
 
 
-
         <div class="w-25 m-auto">
             {{ form_start(formSearch) }}
             {{ form_row(formSearch.category) }}
@@ -19,10 +18,15 @@
             <div class="card-columns">
                 {% for article in articles %}
                     <div class="card">
-
                         <a href="{{ path('article_show', {'id': article.id}) }}">
-
-                            <img class="card-img-top" src="{{ article.picture }}">
+                            <div id="product-hover">
+                                <img class="card-img-top" src="{{ article.picture }}">
+                                <a href=""><span><i class="fas fa-heart"></i></span></a>
+                            </div>
+                            <div id="user-part">
+                                <img id="userPost" src="{{ article.picture }}"/>
+                                <a href=""><p><strong>Username</strong></p></a>
+                            </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{ article.name }}</h3>
                                 <h5 class="card-title">{{ article.category.name }}</h5>

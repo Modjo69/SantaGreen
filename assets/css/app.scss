@@ -6,6 +6,59 @@ $primary: darken(#428bca, 20%);
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+$font-family: 'Montserrat Alternates', sans-serif;
+
+#user-part {
+    display: flex;
+    background-color: white;
+    height: 60px;
+}
+
+#user-part p {
+    margin-top: 23%;
+    margin-left: 10px;
+}
+
+#user-part img {
+    margin-top: 3px;
+}
+
+#userPost {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/************************LITTLE HEART*************************/
+
+
+#product-hover {
+    position: relative;
+}
+
+#product-hover span {
+    position: absolute;
+    top:5px;
+    right:10px;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 60%;
+    opacity: 0.6;
+}
+
+#product-hover span i {
+    position: absolute;
+    margin-left: 23%;
+    margin-top: 23%;
+    color: white;
+}
+
+#product-hover span:hover {
+    opacity: 1;
+}
+
 /************************PROFILE PAGE*************************/
 
 
@@ -103,18 +156,12 @@ $primary: darken(#428bca, 20%);
     color: white;
 }
 
-
-
-
 $globe-width:   12px;
 $globe-height:  28px;
 $globe-spacing: 40px;
 $globe-spread: 3px;
 $light-off-opacity: 0.4;
 
-body {
-    background: #000;
-}
 .lightrope {
     text-align: center;
     white-space: nowrap;
@@ -234,9 +281,6 @@ a {
   font-size: 2.6em;
   text-shadow: black 1px 0 3px;
   font-family: 'merry_christmas_flakeregular';
-  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
-  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
-
 }
 
 .navbar li:hover {
@@ -316,7 +360,11 @@ navbar {
 
 #counter_christmas{
     font-size: 4em;
-    color: white;
+    color:white;
+    align-self: center;
+    text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
+    transition-duration: 1s;
+    font-family: $font-family;
 }
 
 #clockdiv{
@@ -437,6 +485,7 @@ section {
 
 .p_presentation{
     font-size: 1.6em;
+    font-family: $font-family;
 }
 
 .button {
