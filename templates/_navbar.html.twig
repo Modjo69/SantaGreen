@@ -1,18 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="mb-5 navbar navbar-expand-lg navbar-dark bg-white">
     <a class="navbar-brand" href="#">
-        <div class="santa">
-            <div class="circles"></div>
-            <div class="snow"></div>
-            <div class="hat">
-                <div class="hat-end"></div>
-            </div>
-            <div class="face">
-                <div class="eyes"></div>
-                <div class="mouth"></div>
-            </div>
-            <div class="dirty-overflow">
-                <div class="body"></div>
-            </div>
+        <div class="">
+           <img class="santa " alt="papanoel" src="../images/papa_noel.png">
         </div>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,14 +9,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Objets à recycler</a>
+            <li class="nav-item  ">
+                <a class="nav-link text-white " href="{{ path("article") }}">Objets à recycler</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Ateliers</a>
+                <a class="nav-link text-white" href="{{ path("workshop_index") }}">Ateliers</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Tutos</a>
+                <a class="nav-link text-white" href="{{ path("tuto") }}">Tutos</a>
             </li>
         </ul>
     </div>

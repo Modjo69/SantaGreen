@@ -1,0 +1,35 @@
+{% extends 'account/index.html.twig' %}
+
+{% block title %}Hello TutoController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    <div class="container">
+        <div class="text-center">
+            <h1>Tutos</h1>
+        </div>
+        <a class="btn btn-danger" href="{{ path('user_indextuto_new') }}">Create a new tutorial</a>
+        <div class="container mt-5">
+            <div class="card-columns">
+                {% for tuto in tutos %}
+                <div class="card">
+                    <a href="{{ tuto.link }}">
+                        <img class="card-img-top" src="{{ tuto.picture }}">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ tuto.name }}</h3>
+                            <h5 class="card-title">{{ tuto.category.name }}</h5>
+                            <p class="card-text">
+                                {{ tuto.description }}
+                            </p>
+                            <a class="btn btn-danger" href="{{ path('user_indextuto_edit',{id:tuto.id}) }}">Edit</a>
+                            <a class="btn btn-danger" href="{{ path('user_indextuto_delete',{id:tuto.id}) }}">Delete</a>
+{#                            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>#}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

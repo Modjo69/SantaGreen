@@ -1,9 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block  body %}
+{% block body %}
 
 
-    <div class="backgroundTitle"><h1 class="animated fadeInUp duration-3s  santaTitle">Santa Green</h1><div id="compte_a_rebours"></div></div>
+    <div class="backgroundTitle"><h1 class="animated fadeInUp duration-3s  santaTitle">Santa Green</h1>
+        <h1 id="counter_christmas">Compte à rebours</h1>
+        <div id="clockdiv">
+            <div>
+                <span class="days"></span>
+                <div class="smalltext">Jours</div>
+            </div>
+            <div>
+                <span class="hours"></span>
+                <div class="smalltext">Heures</div>
+            </div>
+            <div>
+                <span class="minutes"></span>
+                <div class="smalltext">Minutes</div>
+            </div>
+            <div>
+                <span class="seconds"></span>
+                <div class="smalltext">Secondes</div>
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -26,6 +47,7 @@
 
     {% endfor %}
 
-
+{% block javascripts %}
+    {{ encore_entry_script_tags('counter') }}
 {% endblock %}
 

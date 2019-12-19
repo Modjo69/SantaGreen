@@ -14,13 +14,13 @@ class WorkshopFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        for ($i = 1;$i <= 50; $i++) {
+        for ($i = 1; $i <= 50; $i++) {
             $workshop = new Workshop();
             $workshop->setUser($this->getReference('user_' . $i));
             $workshop->setAddress($this->getReference('address_' . $i));
             $workshop->setName($faker->word);
             $workshop->setDescription($faker->text);
-            $workshop->setPicture($faker->imageUrl());
+            $workshop->setPicture('/images/workshop/workshop-' . random_int(1, 20) . '.jpg');
             $workshop->setUserMax(10);
             $workshop->setUserRegistered(0);
             $workshop->setDateTime($faker->dateTime);
@@ -28,7 +28,6 @@ class WorkshopFixtures extends Fixture implements DependentFixtureInterface
 
             $manager->persist($workshop);
         }
-
 
         $manager->flush();
     }

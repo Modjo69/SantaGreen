@@ -9,6 +9,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
 class ArticleFixtures extends Fixture implements DependentFixtureInterface
 {
+    const Article =[
+        'images/articles/articles1.jpeg',
+        'images/articles/articles2.jpeg'
+
+    ];
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
@@ -18,7 +23,8 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
             $article->setCategory($this->getReference('categorie_'.random_int(1,4)));
             $article->setName($faker->domainName);
             $article->setDescription($faker->text);
-            $article->setPicture($faker->imageUrl());
+
+            $article->setPicture('/images/articles/articles'.random_int(1,2).'.jpeg');
             $manager->persist($article);
         }
 
