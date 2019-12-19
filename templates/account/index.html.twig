@@ -3,16 +3,28 @@
 {% block title %}Hello AccountController!{% endblock %}
 
 {% block body %}
+    {{ dump(app.user) }}
     <div class="container">
-        <div class="row" id="top-profile">
-            <img class="image-fluid" id="background-profile"
-                 src="https://therightsofnature.org/wp-content/uploads/2018/01/turkey-3048299_1920-1366x550.jpg"/>
-            <img id="profile-picture"
-                 src="https://i.pinimg.com/originals/97/e4/2a/97e42a82fc7911961d3ca55f54d1372c.jpg"/>
+        <div class="card">
+        <div class="profile">
+            <div class="profile-image">
+                <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
+            </div>
+            <div class="profile-user-settings">
+                <h1 class="profile-user-name">{{ app.user.firstname }} {{ app.user.lastname }}</h1>
+            </div>
+            <div class="profile-stats">
+                <ul>
+                    <li><span class="profile-stat-count">164</span> posts</li>
+                    <li><span class="profile-stat-count">188</span> followers</li>
+                    <li><span class="profile-stat-count">206</span> following</li>
+                </ul>
+            </div>
+            <div class="profile-bio">
+                <p><span class="profile-real-name"></span>{{ app.user.description }}</p></div>
         </div>
-        <div class="row" id="profile-menu">
-            <h4>Username</h4>
         </div>
+        <!-- End of profile section -->
         <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link active" href="{{ path('user_indexuser_account') }}">Mon Profil</a>
@@ -28,6 +40,7 @@
             </li>
         </ul>
     </div>
+    <!-- End of container -->
 
 
 {% endblock %}
