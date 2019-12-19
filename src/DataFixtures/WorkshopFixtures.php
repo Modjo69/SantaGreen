@@ -20,7 +20,7 @@ class WorkshopFixtures extends Fixture implements DependentFixtureInterface
             $workshop->setAddress($this->getReference('address_' . $i));
             $workshop->setName($faker->word);
             $workshop->setDescription($faker->text);
-            $workshop->setPicture($faker->imageUrl());
+            $workshop->setPicture($faker->imageUrl(1920, 1080));
             $workshop->setUserMax(10);
             $workshop->setUserRegistered(0);
             $workshop->setDateTime($faker->dateTime);
