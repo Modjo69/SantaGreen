@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Tuto;
 
 class HomeController extends AbstractController
 
@@ -19,6 +20,8 @@ class HomeController extends AbstractController
         $categorys = $this->getDoctrine()
             ->getRepository(Category::class)
             ->findAll();
+
+
 
 
         return $this->render('home/index.html.twig', [
