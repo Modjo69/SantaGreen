@@ -7,6 +7,32 @@ $primary: darken(#428bca, 20%);
 @import "~bootstrap/scss/bootstrap";
 
 
+
+#user-part {
+    display: flex;
+    background-color: white;
+    height: 60px;
+}
+
+#user-part p {
+    margin-top: 23%;
+    margin-left: 10px;
+}
+
+#user-part img {
+    margin-top: 3px;
+}
+
+#userPost {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/************************LITTLE HEART*************************/
+
+
 #product-hover {
     position: relative;
 }
@@ -23,11 +49,10 @@ $primary: darken(#428bca, 20%);
 }
 
 #product-hover span i {
-   margin-top:0;
-    right:3px;
+    position: absolute;
+    margin-left: 23%;
+    margin-top: 23%;
     color: white;
-
-
 }
 
 #product-hover span:hover {

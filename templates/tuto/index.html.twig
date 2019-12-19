@@ -4,7 +4,7 @@
 
 {% block body %}
 
-        <div class="container">
+    <div class="container">
 
         <div class="w-25 m-auto">
             {{ form_start(formSearch) }}
@@ -18,8 +18,12 @@
                     <div class="card">
                         <a href="{{ tuto.link }}">
                             <div id="product-hover">
-                                <img class="card-img-top" src="{{ tuto.picture }}">
-                                <a href=""><span><i class="fas fa-heart"></i></span></a>
+                                    <img class="card-img-top" src="{{ tuto.picture }}">
+                                    <a href=""><span><i class="fas fa-heart"></i></span></a>
+                            </div>
+                            <div id="user-part">
+                                <img id="userPost" src="{{ tuto.picture }}"/>
+                                <a href=""><p><strong>Username</strong></p></a>
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{ tuto.name }}</h3>
