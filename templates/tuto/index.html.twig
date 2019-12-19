@@ -3,10 +3,9 @@
 {% block title %}Hello TutoController!{% endblock %}
 
 {% block body %}
+    {{ dump(app.user) }}
     <div class="container">
-        <div class="text-center">
-            <h1>Tutos</h1>
-        </div>
+
         <div class="w-25 m-auto">
             {{ form_start(formSearch) }}
             {{ form_row(formSearch.category) }}

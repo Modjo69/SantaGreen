@@ -6,90 +6,270 @@ $primary: darken(#428bca, 20%);
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+/************************PROFILE PAGE*************************/
 
 
-#profile-picture {
-    position:absolute;
-    max-width: 140px;
-    max-height: 190px;
-    left:40%;
-    top:60%;
+.profile {
+    padding: 5rem 0;
+}
+
+.profile::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.profile-image {
+    float: left;
+    width: calc(33.333% - 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.profile-image img {
     border-radius: 50%;
 }
 
-#background-profile {
-    border-radius: 4px;
+.profile-user-settings,
+.profile-stats,
+.profile-bio {
+    float: left;
+    width: calc(66.666% - 2rem);
 }
 
-#top-profile {
-    position: relative;
+.profile-user-settings {
+    margin-top: 0.4rem;
 }
 
-#profile-menu {
-    background-color: beige;
-    border-radius: 4px;
+.profile-user-name {
+    display: inline-block;
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: black;
 }
 
-#profile-menu h4 {
-    margin:auto;
-    margin-top: 10%;
+.profile-edit-btn {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    border: 0.1rem solid #dbdbdb;
+    border-radius: 0.3rem;
+    padding: 0 2.4rem;
+    margin-left: 2rem;
+    color: black;
 }
 
-#menu-items {
-    display: flex;
-    justify-content: center;
+.profile-settings-btn {
+    font-size: 2rem;
+    margin-left: 1rem;
+
 }
+
+.profile-stats {
+    margin-top: 2.3rem;
+    color: black;
+}
+
+
+.profile-stats li {
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.profile-stats li:last-of-type {
+    margin-right: 0;
+}
+
+.profile-bio {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 2.3rem;
+}
+
+
+.profile-real-name,
+.profile-stat-count,
+.profile-edit-btn {
+    font-weight: 600;
+}
+
+.profile-menu {
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+$globe-width:   12px;
+$globe-height:  28px;
+$globe-spacing: 40px;
+$globe-spread: 3px;
+$light-off-opacity: 0.4;
+
+body {
+    background: #000;
+}
+.lightrope {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    margin: -15px 0 0 0;
+    padding: 0;
+    pointer-events: none;
+    width: 100%;
+    li {
+        position: relative;
+        animation-fill-mode: both;
+        animation-iteration-count:infinite;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: $globe-width;
+        height: $globe-height;
+        border-radius: 50%;
+        margin: $globe-spacing/2;
+        display: inline-block;
+        background: rgba(0,247,165,1);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);
+        animation-name: flash-1;
+        animation-duration: 2s;
+        &:nth-child(2n+1) {
+            background: rgba(0,255,255,1);
+            box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.5);
+            animation-name: flash-2;
+            animation-duration: 0.4s;
+        }
+        &:nth-child(4n+2) {
+            background: rgba(247,0,148,1);
+            box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);
+            animation-name: flash-3;
+            animation-duration: 1.1s;
+        }
+        &:nth-child(odd) {
+            animation-duration: 1.8s;
+        }
+        &:nth-child(3n+1) {
+            animation-duration: 1.4s;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            background: #222;
+            width: ($globe-width - 2);
+            height: $globe-height/3;
+            border-radius: 3px;
+            top: (0 - ($globe-height/6));
+            left: 1px;
+        }
+        &:after {
+            content: "";
+            top: (0 - $globe-height/2);
+            left: $globe-width - 3;
+            position: absolute;
+            width: $globe-spacing + 12;
+            height: ($globe-height/3 * 2);
+            border-bottom: solid #222 2px;
+            border-radius: 50%;
+        }
+        &:last-child:after {
+            content: none;
+        }
+        &:first-child {
+            margin-left: -$globe-spacing;
+        }
+    }
+}
+@keyframes flash-1 {
+    0%, 100% { background: rgba(0,247,165,1);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);}
+    50% { background: rgba(0,247,165,$light-off-opacity);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,0.2);}
+}
+@keyframes flash-2 {
+    0%, 100% { background: rgba(0,255,255,1);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,1);}
+    50% { background: rgba(0,255,255,$light-off-opacity);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.2);}
+}
+@keyframes flash-3 {
+    0%, 100% { background: rgba(247,0,148,1);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);}
+    50% { background: rgba(247,0,148,$light-off-opacity);
+        box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,0.2);}
+}
+
+
+
+
 
 /************************NAVBAR*************************/
 a {
-    color : black;
+  color: black;
 }
 
 
-.santa{
-    height: 80px;
+.santa {
+  height: 80px;
 }
 
 
-.navbar{
-    text-decoration: none;
-    box-shadow: 0 0 4px 0;
-    height: 90px;
-    background-image: url("../../public/images/navNoel.png");
+.navbar {
+  text-decoration: none;
+  box-shadow: 0 0 4px 0;
+  height: 90px;
+  background-image: url("../../public/images/navNoel.png");
 }
+
 .navbar a {
-    color: white;
-    font-size: 1.6em;
-    text-shadow: black 1px 0 3px;
-    font-family: oblique;
+  color: white;
+  font-size: 2.6em;
+  text-shadow: black 1px 0 3px;
+  font-family: 'merry_christmas_flakeregular';
+  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+
 }
 
-.navbar li:hover{
-    color: green!important;
+.navbar li:hover {
+  color: green !important;
 }
 
 body {
-    background-image: url("../../public/images/christmas.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat !important;
-    background-position: top !important;
-    background-size: cover !important;
+  background-image: url("../../public/images/christmas.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat !important;
+  background-position: top !important;
+  background-size: cover !important;
 }
-navbar{
-    height: 20px;
+
+navbar {
+  height: 20px;
+
 }
+
 /*****HOME_PAGE******************************/
 @font-face {
-    font-family: 'merry_christmas_flakeregular';
-    src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
-    url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'merry_christmas_flakeregular';
+  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-.tutoExemple{
-    padding: 0px;
-    margin: 0px;
+
+.tutoExemple {
+  padding: 0px;
+  margin: 0px;
 }
+
 
 .boxTuto{
     padding: 0px;
@@ -351,29 +531,48 @@ canvas{
 //show pages
 
 .article-clean .intro p .date {
-    padding: 4px 0 4px 10px;
-    margin-left: 10px;
-    border-left: 1px solid #ddd;
+  padding: 4px 0 4px 10px;
+  margin-left: 10px;
+  border-left: 1px solid #ddd;
 }
 
 .article-clean .intro p a {
-    color: #333;
-    text-transform: uppercase;
-    padding-left: 3px;
+  color: #333;
+  text-transform: uppercase;
+  padding-left: 3px;
 }
 
 .article-clean .intro {
-    font-size: 16px;
-    margin: 0 auto 30px;
+  font-size: 16px;
+  margin: 0 auto 30px;
 }
 
 .img-fluid {
-    margin-top: 10%;
-    height: auto;
-    vertical-align: middle;
-    border-style: none;
+  margin-top: 10%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
 }
 
 .btn-workshop {
-    margin: 5%;
+  margin: 5%;
+}
+
+.card {
+  border: 1px white;
+  font-family:  "Gill Sans", sans-serif;
+
+
+}
+.card a{
+  text-decoration: none;
+ cursor: zoom-in;
+}
+
+.card:hover{
+  box-shadow: 0 40px 30px 0 rgba(0, 0, 0, 0.2), 0 35px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cardShow{
+  background-color: #1C440C;
 }

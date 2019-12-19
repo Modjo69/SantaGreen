@@ -4,57 +4,69 @@
 
 {% block body %}
 
-    <div class="article-clean">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
-                    <div class="intro">
-                        <h1 class="text-center">{{article.name }}</h1>
-                        <p class="text-center"><span class="by">propriétaire:  </span><a
-                                    href="">{{ article.user.firstname }}</a>
-                        </p><img class="img-fluid"
-                                 src="{{ article.picture }}"/>
-                    </div>
-                    <div class="text">
-                        <p>Sed lobortis mi. Suspendisse vel placerat ligula. <span style="text-decoration: underline;">Vivamus</span>
-                            ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget
-                            velit pulvinar dictum vel in justo.
-                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac lacus. <strong>Ut
-                                vehicula rhoncus</strong> elementum. Etiam quis tristique lectus. Aliquam in arcu eget
-                            velit <em>pulvinar dict</em> vel in justo. Vestibulum ante
-                            ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                        <h2>Aliquam In Arcu </h2>
-                        <p>Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam
-                            quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo. Vestibulum
-                            ante ipsum primis in faucibus orci luctus et ultrices
-                            posuere cubilia Curae.</p>
-                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
-                            Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum. Etiam
-                            quis tristique lectus. Aliquam in arcu eget velit pulvinar
-                            dictum vel in justo.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="map-clean">
+        <div class="card w-50 m-auto text-white" style="background-color: rgba(202,22,25,0.5)!important;">
+            <div class="article-clean">
                 <div class="container">
-                    <div class="intro">
-                        <h2 class="text-center">Location </h2>
-                        <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum
-                            nibh
-                            erat, pellentesque ut laoreet vitae. </p>
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                            <div class="int ro">
+                                <h1 class="text-center">{{ article.name }}</h1>
+                                <p class="text-center"><span class="by">propriétaire:  </span><a
+                                            href="">{{ article.user.firstname }}</a>
+                                </p><img class="img-fluid"
+                                         src="{{ article.picture }}"/>
+                            </div>
+                            <div class="text">
+                                <p>Sed lobortis mi. Suspendisse vel placerat ligula. <span
+                                            style="text-decoration: underline;">Vivamus</span>
+                                    ac sem lac. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in
+                                    arcu eget
+                                    velit pulvinar dictum vel in justo.
+                                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                    Curae.</p>
+                                <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac lacus. <strong>Ut
+                                        vehicula rhoncus</strong> elementum. Etiam quis tristique lectus. Aliquam in
+                                    arcu eget
+                                    velit <em>pulvinar dict</em> vel in justo. Vestibulum ante
+                                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                                <h2>Aliquam In Arcu </h2>
+                                <p>Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum.
+                                    Etiam
+                                    quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.
+                                    Vestibulum
+                                    ante ipsum primis in faucibus orci luctus et ultrices
+                                    posuere cubilia Curae.</p>
+                                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                    Curae.
+                                    Suspendisse vel placerat ligula. Vivamus ac sem lac. Ut vehicula rhoncus elementum.
+                                    Etiam
+                                    quis tristique lectus. Aliquam in arcu eget velit pulvinar
+                                    dictum vel in justo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-clean">
+                        <div class="container">
+                            <div class="intro">
+                                <h2 class="text-center">Location </h2>
+                                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula.
+                                    Vestibulum
+                                    nibh
+                                    erat, pellentesque ut laoreet vitae. </p>
+                            </div>
+                        </div>
+                        <div class="container d-flex justify-content-center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11137.384254633163!2d4.818147375215922!3d45.74420775193381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea4ac9e1fd2f%3A0xabc36e768b27c9a0!2sWild%20Code%20School%20-%20Formation%20d%C3%A9veloppeur%20web%20%26%20data%20analyst!5e0!3m2!1sfr!2sfr!4v1576750453681!5m2!1sfr!2sfr"
+                                    width="640" height="480" frameborder="0" style="border:0;"
+                                    allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                    <div class="btn-workshop row d-flex justify-content-center">
+                        <button class="btn btn-danger">Proposer un échange</button>
                     </div>
                 </div>
-                <div class="container d-flex justify-content-center">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11137.384254633163!2d4.818147375215922!3d45.74420775193381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea4ac9e1fd2f%3A0xabc36e768b27c9a0!2sWild%20Code%20School%20-%20Formation%20d%C3%A9veloppeur%20web%20%26%20data%20analyst!5e0!3m2!1sfr!2sfr!4v1576750453681!5m2!1sfr!2sfr"
-                            width="640" height="480" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div>
-            </div>
-            <div class="btn-workshop row d-flex justify-content-center">
-                <button class="btn btn-danger">Proposer un échange</button>
+
             </div>
         </div>
-
-    </div>
 
 {% endblock %}

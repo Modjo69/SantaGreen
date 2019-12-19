@@ -24,7 +24,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
             $article->setName($faker->domainName);
             $article->setDescription($faker->text);
 
-            $article->setPicture($faker->imageUrl(1920, 1080));
+            $article->setPicture('/images/articles/articles'.random_int(1,2).'.jpeg');
             $manager->persist($article);
         }
 
