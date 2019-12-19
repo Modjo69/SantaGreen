@@ -25,6 +25,19 @@
         </div>
     </div>
 
+    <section class="portfolio-block photography">
+        <div class="container">
+            <div class="row no-gutters">
+                {% for workshop in workshops %}
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                        <a href="{{ path('workshop_show', {'id': workshop.id}) }}"><img class="img-fluid image"
+                                                                                      src="{{ workshop.picture }}"/></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
 
 
 
