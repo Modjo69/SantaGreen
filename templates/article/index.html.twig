@@ -25,7 +25,7 @@
                             </div>
                             <div id="user-part">
                                 <img id="userPost" src="{{ article.picture }}"/>
-                                <a href=""><p><strong>Username</strong></p></a>
+                                <a href=""><p><strong>{{ article.user.firstname }} {{ article.user.lastname }}</strong></p></a>
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">{{ article.name }}</h3>
