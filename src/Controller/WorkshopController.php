@@ -30,7 +30,7 @@ class WorkshopController extends AbstractController
         $formSearch->handleRequest($request);
 
         if ($formSearch->isSubmitted()){
-            var_dump($formSearch->get('category')->getData()->getId());
+
             $workshops= $this->getDoctrine()
                 ->getRepository(Workshop::class)
                 ->findBy(['category'=>$formSearch->get('category')->getData()]);

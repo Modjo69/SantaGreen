@@ -69,11 +69,17 @@ class User implements UserInterface
      */
     private $description;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Tuto", mappedBy="user")
+     */
+    private $tutos;
+
     public function __construct()
     {
         $this->address = new ArrayCollection();
         $this->article = new ArrayCollection();
         $this->workshops = new ArrayCollection();
+        $this->tutos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -270,7 +276,7 @@ class User implements UserInterface
      * and populated in any number of different ways when the user object
      * is created.
      *
-     * @return (Role|string)[] The user roles
+     * @return array (Role|string)[] The user roles
      */
     public function getRoles()
     {
@@ -311,5 +317,34 @@ class User implements UserInterface
         // TODO: Implement eraseCredentials() method.
     }
 
+    /**
+     * @return Collection|Tuto[]
+     */
+    public function getTutos(): Collection
+    {
+        return $this->tutos;
+    }
 
+    public function addTuto(Tuto $tuto): self
+    {
+        if (!$this->tutos->contains($tuto)) {
+            $this->tutos[] = $tuto;
+            $tuto->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTuto(Tuto $tuto): self
+    {
+        if ($this->tutos->contains($tuto)) {
+            $this->tutos->removeElement($tuto);
+            // set the owning side to null (unless already changed)
+            if ($tuto->getUser() === $this) {
+                $tuto->setUser(null);
+            }
+        }
+
+        return $this;
+    }
 }
