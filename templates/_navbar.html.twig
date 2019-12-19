@@ -1,7 +1,13 @@
 <nav class="mb-5 navbar navbar-expand-lg navbar-dark bg-white">
     <a class="navbar-brand" href="#">
         <a href="{{ path('home.index') }}">
-           <img class="santa " alt="papanoel" src="../images/papa_noel.png">
+
+            {% if  app.request.get('_route')=='user_indexworkshop' or    app.request.get('_route')=='user_indexworkshop_new' %}
+                <img class="santa " alt="papanoel" src="../../images/papa_noel.png">
+            {% else %}
+                <img class="santa " alt="papanoel" src="../images/papa_noel.png">
+            {% endif %}
+
         </a>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
