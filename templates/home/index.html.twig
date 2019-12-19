@@ -1,5 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block  content %}
+{% block  body %}
+
+
+    <div class="backgroundTitle"><h1 class="animated fadeInUp duration-3s  santaTitle">Santa Green</h1><div id="compte_a_rebours"></div></div>
+
+
+
+    {% for category in categorys %}
+<div class=" boxHomePage container">
+    <div class="row {% if loop.index is divisible by(2) %} flex-row-reverse {% else %} row {% endif %}">
+        <div style='border: solid black'class="boxTuto col-6 row">
+            <div class="tutoExemple col-6">column</div>
+            <div class="tutoExemple col-6">Column</div>
+            <div class="tutoExemple col-6">Column</div>
+            <div class="tutoExemple col-6">Column</div>
+        </div>
+        <div class="boxCategory col-6">{{ category.name }}<img class="pictureCategory" src="{{ category.picture}}"></div>
+    </div>
+</div>
+
+    {% endfor %}
+
 
 {% endblock %}
+
