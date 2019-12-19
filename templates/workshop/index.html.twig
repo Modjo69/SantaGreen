@@ -4,47 +4,37 @@
 
 {% block body %}
 
-    {{ form_start(formSearch) }}
-    {{ form_row(formSearch.category) }}
-    <button type="submit">rechercher</button>
-    {{ form_end(formSearch) }}
-    <h1>Workshop index</h1>
+    <div class="container">
+        <div class="text-center">
+            <h1>Ateliers</h1>
+        </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Picture</th>
-                <th>User_max</th>
-                <th>User_registered</th>
-                <th>Date_time</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for workshop in workshops %}
-            <tr>
-                <td>{{ workshop.id }}</td>
-                <td>{{ workshop.name }}</td>
-                <td>{{ workshop.description }}</td>
-                <td>{{ workshop.picture }}</td>
-                <td>{{ workshop.userMax }}</td>
-                <td>{{ workshop.userRegistered }}</td>
-                <td>{{ workshop.dateTime ? workshop.dateTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('workshop_show', {'id': workshop.id}) }}">show</a>
-                    <a href="{{ path('workshop_edit', {'id': workshop.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="w-25 m-auto">
+        {{ form_start(formSearch) }}
+        {{ form_row(formSearch.category) }}
+        <button type="submit">rechercher</button>
+        {{ form_end(formSearch) }}
+    </div>
 
-    <a href="{{ path('workshop_new') }}">Create new</a>
+    <div class="mt-5 container">
+        <div class="card-columns">
+            {% for workshop in workshops %}
+                <div class="card">
+                    <a href="">
+                        <img class="card-img-top" src="{{ workshop.picture }}">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ workshop.name }}</h3>
+                            <h5 class="card-title">{{ workshop.category.name }}</h5>
+                            <p class="card-text">
+                                {{ workshop.description }}
+                            </p>
+                            {#                            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>#}
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
 {% endblock %}
