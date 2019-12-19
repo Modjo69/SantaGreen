@@ -6,6 +6,11 @@ $primary: darken(#428bca, 20%);
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: "MerryChristmasFlake";
+  src: url("../../public/font/MerryChristmasFlake.ttf") format("ttf")
+}
+
 body {
 
 }
@@ -29,3 +34,32 @@ body {
 .boxHomePage{
   margin-bottom: 20px;
 }
+
+.pictureCategory{
+
+width: 560px;
+}
+
+.backgroundTitle{
+  background-image: url("../../public/images/christmas.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat !important;
+  background-position: top !important;
+  background-size: cover !important;
+  width:100% ;
+  height: 800px;
+  display: flex;
+align-item: center;
+
+
+}
+
+.santaTitle{
+  color:white;
+  font-size: 8em;
+  align-self: center;
+
+  font-family: MerryChristmasFlake!important;
+}
+
+
