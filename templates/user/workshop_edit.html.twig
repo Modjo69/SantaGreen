@@ -3,11 +3,12 @@
 {% block title %}Edit Workshop{% endblock %}
 
 {% block body %}
+    {{ parent() }}
     <h1>Edit Workshop</h1>
 
-    {{ include('user/_tuto_form.html.twig.twig', {'button_label': 'Update'}) }}
+    {{ include('user/_workshop_form.html.twig.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('workshop_index') }}">back to list</a>
+    <a href="{{ path('user_indexworkshop_index') }}">back to list</a>
 
-    {{ include('user/_tuto_delete_form.html.twig') }}
+    {{ include('user/_workshop_delete_form.html.twig') }}
 {% endblock %}

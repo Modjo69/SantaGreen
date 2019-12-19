@@ -28,23 +28,8 @@
 
 
 
-    {% for category in categorys %}
-        <div class=" boxHomePage container">
-            <div class="row {% if loop.index is divisible by(2) %} flex-row-reverse {% else %} row {% endif %}">
-                <div style='border: solid black' class="boxTuto col-6 row">
-                    <div class="tutoExemple col-6">column</div>
-                    <div class="tutoExemple col-6">Column</div>
-                    <div class="tutoExemple col-6">Column</div>
-                    <div class="tutoExemple col-6">Column</div>
-                </div>
-                <div class="boxCategory col-6">{{ category.name }}<img class="pictureCategory"
-                                                                       src="{{ category.picture }}"></div>
-            </div>
-        </div>
 
-    {% endfor %}
 {% endblock %}
-
 {% block javascripts %}
     {{ encore_entry_script_tags('counter') }}
 {% endblock %}

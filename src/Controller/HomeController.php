@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\Category;
+use App\Entity\Workshop;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Tuto;
 
 class HomeController extends AbstractController
 
@@ -15,14 +18,28 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $categorys = new Category();
-        $categorys = $this->getDoctrine()
+        $categories = $this->getDoctrine()
             ->getRepository(Category::class)
+            ->findAll();
+        $articles=$this->getDoctrine()
+            ->getRepository(Article::class)
+            ->findAll();
+        $workshops=$this->getDoctrine()
+            ->getRepository(Workshop::class)
+            ->findAll();
+        $tutos=$this->getDoctrine()
+            ->getRepository(Tuto::class)
             ->findAll();
 
 
+
+
+
         return $this->render('home/index.html.twig', [
-            'categorys'=>$categorys
+            'categories'=>$categories,
+            'articles'=>$articles,
+            'workshops'=>$workshops,
+            'tutos'=>$tutos
         ]);
     }
 
