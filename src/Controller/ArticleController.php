@@ -42,4 +42,14 @@ class ArticleController extends AbstractController
             'articles'=>$articles
         ]);
     }
+
+    /**
+     * @Route("/{id}", name="article_show", methods={"GET"})
+     */
+    public function show(Article $article): Response
+    {
+        return $this->render('workshop/show.html.twig', [
+            'article' => $article,
+        ]);
+    }
 }

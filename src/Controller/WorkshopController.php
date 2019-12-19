@@ -40,4 +40,14 @@ class WorkshopController extends AbstractController
             'workshops' => $workshops,
         ]);
     }
+
+    /**
+     * @Route("/{id}", name="workshop_show", methods={"GET"})
+     */
+    public function show(Workshop $workshop): Response
+    {
+        return $this->render('workshop/show.html.twig', [
+            'workshop' => $workshop,
+        ]);
+    }
 }
