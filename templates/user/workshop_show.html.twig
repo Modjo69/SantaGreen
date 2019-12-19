@@ -1,0 +1,46 @@
+{% extends 'account/index.html.twig' %}
+
+{% block title %}Workshop{% endblock %}
+
+{% block body %}
+    <h1>Workshop</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ workshop.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ workshop.name }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ workshop.description }}</td>
+        </tr>
+        <tr>
+            <th>Picture</th>
+            <td>{{ workshop.picture }}</td>
+        </tr>
+        <tr>
+            <th>User_max</th>
+            <td>{{ workshop.userMax }}</td>
+        </tr>
+        <tr>
+            <th>User_registered</th>
+            <td>{{ workshop.userRegistered }}</td>
+        </tr>
+        <tr>
+            <th>Date_time</th>
+            <td>{{ workshop.dateTime ? workshop.dateTime|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('workshop_index') }}">back to list</a>
+
+    <a href="{{ path('workshop_edit', {'id': workshop.id}) }}">edit</a>
+
+    {{ include('user/_tuto_delete_form.html.twig') }}
+{% endblock %}
