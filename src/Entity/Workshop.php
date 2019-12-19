@@ -37,7 +37,7 @@ class Workshop
     private $user_max;
 
     /**
-     * @ORM\Column(type="integer", options={"default":0})
+     * @ORM\Column(type="integer", options={"default": 0})
      */
     private $user_registered;
 

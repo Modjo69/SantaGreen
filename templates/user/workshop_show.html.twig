@@ -40,7 +40,7 @@
 
     <a href="{{ path('workshop_index') }}">back to list</a>
 
-    <a href="{{ path('workshop_edit', {'id': workshop.id}) }}">edit</a>
+    <a href="{{ path('user_indexworkshop_edit', {'id': workshop.id}) }}">edit</a>
 
-    {{ include('user/_tuto_delete_form.html.twig') }}
+    {{ include('user/_workshop_delete_form.html.twig') }}
 {% endblock %}
