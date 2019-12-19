@@ -1,0 +1,13 @@
+{% extends 'account/index.html.twig' %}
+
+{% block title %}New Workshop{% endblock %}
+
+{% block body %}
+    <h1>Create new Workshop</h1>
+    <div class="container">
+        <div class="card">
+            {{ include('user/_workshop_forn.html.twig') }}
+        </div>
+    </div>
+    <a href="{{ path('user_indexworkshop') }}">back to list</a>
+{% endblock %}
