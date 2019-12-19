@@ -1,13 +1,13 @@
 {% extends 'account/index.html.twig' %}
 
-{% block title %}New Workshop{% endblock %}
+{% block title %}Nouvel Atelier{% endblock %}
 
 {% block body %}
-    <h1 class="h1_christmas">Create new Workshop</h1>
+    <h1 class="h1_christmas">Créer un nouvel atelier</h1>
     <div class="container">
         <div class="card " style="background-color:rgb(350, 250, 250, 0.8);">
             {{ include('user/_workshop_forn.html.twig') }}
         </div>
     </div>
-    <a href="{{ path('user_indexworkshop') }}">back to list</a>
+    <a href="{{ path('user_indexworkshop') }}" class="margin_ws">Retour</a>
 {% endblock %}
