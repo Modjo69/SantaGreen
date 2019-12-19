@@ -6,6 +6,61 @@ $primary: darken(#428bca, 20%);
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+
+
+#user-part {
+    display: flex;
+    background-color: white;
+    height: 60px;
+}
+
+#user-part p {
+    margin-top: 23%;
+    margin-left: 10px;
+}
+
+#user-part img {
+    margin-top: 3px;
+}
+
+#userPost {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/************************LITTLE HEART*************************/
+
+
+#product-hover {
+    position: relative;
+}
+
+#product-hover span {
+    position: absolute;
+    top:5px;
+    right:10px;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 60%;
+    opacity: 0.6;
+}
+
+#product-hover span i {
+    position: absolute;
+    margin-left: 23%;
+    margin-top: 23%;
+    color: white;
+}
+
+#product-hover span:hover {
+    opacity: 1;
+}
+
+
+
 /************************PROFILE PAGE*************************/
 
 
