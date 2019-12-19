@@ -12,27 +12,27 @@
             <td>{{ tuto.id }}</td>
         </tr>
         <tr>
-            <th>Name</th>
+            <th>Nom</th>
             <td>{{ tuto.name }}</td>
         </tr>
         <tr>
-            <th>Link</th>
+            <th>Lien</th>
             <td>{{ tuto.link }}</td>
         </tr>
         <tr>
-            <th>Category</th>
+            <th>Categorie</th>
             <td>{{ tuto.category }}</td>
         </tr>
         <tr>
-            <th>Picture</th>
+            <th>Photo</th>
             <td>{{ tuto.picture }}</td>
         </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('tuto') }}">back to list</a>
+    <a href="{{ path('tuto') }}">Retour</a>
 
-    <a href="{{ path('tuto_edit', {'id': tuto.id}) }}">edit</a>
+    <a href="{{ path('tuto_edit', {'id': tuto.id}) }}">Modifier</a>
 
     {{ include('user/_tuto_delete_form.html.twig') }}
 {% endblock %}

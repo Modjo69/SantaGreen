@@ -1,9 +1,9 @@
 {% extends 'account/index.html.twig' %}
 
-{% block title %}Workshop{% endblock %}
+{% block title %}Ateliers{% endblock %}
 
 {% block body %}
-    <h1>Workshop</h1>
+    <h1>Ateliers</h1>
 
     <table class="table">
         <tbody>
@@ -12,7 +12,7 @@
             <td>{{ workshop.id }}</td>
         </tr>
         <tr>
-            <th>Name</th>
+            <th>Nom</th>
             <td>{{ workshop.name }}</td>
         </tr>
         <tr>
@@ -20,27 +20,27 @@
             <td>{{ workshop.description }}</td>
         </tr>
         <tr>
-            <th>Picture</th>
+            <th>Photo</th>
             <td>{{ workshop.picture }}</td>
         </tr>
         <tr>
-            <th>User_max</th>
+            <th>Nb max de participants</th>
             <td>{{ workshop.userMax }}</td>
         </tr>
         <tr>
-            <th>User_registered</th>
+            <th>Participants enregistrés</th>
             <td>{{ workshop.userRegistered }}</td>
         </tr>
         <tr>
-            <th>Date_time</th>
+            <th>Date / heure</th>
             <td>{{ workshop.dateTime ? workshop.dateTime|date('Y-m-d H:i:s') : '' }}</td>
         </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('workshop_index') }}">back to list</a>
+    <a href="{{ path('workshop_index') }}">Retour</a>
 
-    <a href="{{ path('user_indexworkshop_edit', {'id': workshop.id}) }}">edit</a>
+    <a href="{{ path('user_indexworkshop_edit', {'id': workshop.id}) }}">Modifier</a>
 
     {{ include('user/_workshop_delete_form.html.twig') }}
 {% endblock %}

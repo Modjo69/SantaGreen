@@ -1,14 +1,14 @@
 {% extends 'account/index.html.twig' %}
 
-{% block title %}Edit Workshop{% endblock %}
+{% block title %}Modifier l'atelier{% endblock %}
 
 {% block body %}
     {{ parent() }}
-    <h1>Edit Workshop</h1>
+    <h1>Modifier l'atelier</h1>
 
     {{ include('user/_workshop_form.html.twig.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('user_indexworkshop_index') }}">back to list</a>
+    <a href="{{ path('user_indexworkshop_index') }}">Retour</a>
 
     {{ include('user/_workshop_delete_form.html.twig') }}
 {% endblock %}

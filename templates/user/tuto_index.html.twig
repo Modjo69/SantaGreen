@@ -1,6 +1,6 @@
 {% extends 'account/index.html.twig' %}
 
-{% block title %}Hello TutoController!{% endblock %}
+{% block title %}Les tutoriels{% endblock %}
 
 {% block body %}
     {{ parent() }}
@@ -9,7 +9,7 @@
         <div class="text-center">
             <h1 class="h1_christmas">Tutos</h1>
         </div>
-        <a class="btn btn-danger" href="{{ path('user_indextuto_new') }}">Create a new tutorial</a>
+        <a class="btn btn-danger button" href="{{ path('user_indextuto_new') }}">Créer un nouveau tutoriel</a>
         <div class="container mt-5">
             <div class="card-columns">
                 {% for tuto in tutos %}
@@ -22,8 +22,8 @@
                             <p class="card-text">
                                 {{ tuto.description }}
                             </p>
-                            <a class="btn btn-danger" href="{{ path('user_indextuto_edit',{id:tuto.id}) }}">Edit</a>
-                            <a class="btn btn-danger" href="{{ path('user_indextuto_delete',{id:tuto.id}) }}">Delete</a>
+                            <a class="btn btn-danger" href="{{ path('user_indextuto_edit',{id:tuto.id}) }}">Modifier</a>
+                            <a class="btn btn-danger" href="{{ path('user_indextuto_delete',{id:tuto.id}) }}">Supprimer</a>
 {#                            <p class="card-text"><small class="text-muted"><i class="fas fa-eye"></i>1000<i class="far fa-user"></i>admin<i class="fas fa-calendar-alt"></i>Jan 20, 2018</small></p>#}
                         </div>
                     </a>
