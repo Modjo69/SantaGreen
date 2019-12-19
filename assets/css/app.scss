@@ -41,38 +41,82 @@ $primary: darken(#428bca, 20%);
 }
 
 
-/*****HOME_PAGE******************************/
-@font-face {
-  font-family: 'merry_christmas_flakeregular';
-  src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
-  url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+
+body {
+    background-color: white;
+    color : white;
 
 }
+
+
+
+/************************NAVBAR*************************/
+a {
+    color : black;
+}
+
+
+.santa{
+    height: 80px;
+}
+
+
+.navbar{
+    text-decoration: none;
+    box-shadow: 0 0 4px 0;
+    height: 90px;
+    background-image: url("../../public/images/navNoel.png");
+}
+.navbar a {
+    color: white;
+    font-size: 1.6em;
+    text-shadow: black 1px 0 3px;
+    font-family: oblique;
+}
+
+.navbar li:hover{
+    color: green!important;
+}
+
+body {
+    background-image: url("../../public/images/christmas.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat !important;
+    background-position: top !important;
+    background-size: cover !important;
+}
+navbar{
+    height: 20px;
+}
+/*****HOME_PAGE******************************/
+@font-face {
+    font-family: 'merry_christmas_flakeregular';
+    src: url('../../public/font/merrychristmasflake-webfont.woff2') format('woff2'),
+    url('../../public/font/merrychristmasflake-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .tutoExemple{
-  padding: 0px;
-  margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .boxTuto{
-  padding: 0px;
-  margin: 0px;
-
+    padding: 0px;
+    margin: 0px;
 }
 
 .boxCategory{
-  padding: 0px;
-  margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .boxHomePage{
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .pictureCategory{
-
-  width: 560px;
+    width: 560px;
 }
 
 .backgroundTitle{
@@ -92,19 +136,20 @@ $primary: darken(#428bca, 20%);
 }
 
 .santaTitle{
-  color:white;
-  font-size: 8em;
-  align-self: center;
-  text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
-  transition-duration: 1s;
-  font-family: merry_christmas_flakeregular!important;
+    color:white;
+    font-size: 8em;
+    align-self: center;
+    text-shadow:1px 1px 2px red, 0 0 1em green, 0 0 0.2em green;
+    transition-duration: 1s;
+    font-family: merry_christmas_flakeregular!important;
 }
 
 #compte_a_rebours{
-  color:white;
-  font-size: 2.5em;
-  text-align: center;
+    color:white;
+    font-size: 2.5em;
+    text-align: center;
 }
+
 /*****END_HOME_PAGE******************************/
 body {
     background-color: white;
@@ -421,6 +466,7 @@ a {
 .btn-workshop {
     margin: 5%;
 }
+
 
 
 
