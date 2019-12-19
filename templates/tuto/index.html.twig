@@ -7,18 +7,21 @@
         <div class="text-center">
             <h1>Tutos</h1>
         </div>
-        {{ form_start(formSearch) }}
-        {{ form_row(formSearch.category) }}
-        <button type="submit">rechercher</button>
-        {{ form_end(formSearch) }}
-        <div class="container">
+        <div class="w-25 m-auto">
+            {{ form_start(formSearch) }}
+            {{ form_row(formSearch.category) }}
+            <button type="submit">rechercher</button>
+            {{ form_end(formSearch) }}
+        </div>
+        <div class="container mt-5">
             <div class="card-columns">
                 {% for tuto in tutos %}
                 <div class="card">
                     <a href="{{ tuto.link }}">
                         <img class="card-img-top" src="{{ tuto.picture }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ tuto.name }}</h5>
+                            <h3 class="card-title">{{ tuto.name }}</h3>
+                            <h5 class="card-title">{{ tuto.category.name }}</h5>
                             <p class="card-text">
                                 {{ tuto.description }}
                             </p>
