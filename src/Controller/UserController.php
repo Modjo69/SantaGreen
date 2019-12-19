@@ -71,6 +71,7 @@ class UserController extends AbstractController
      */
     public function show(Tuto $tuto): Response
     {
+
         return $this->render('tuto/show.html.twig', [
             'tuto' => $tuto,
         ]);
