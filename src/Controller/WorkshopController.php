@@ -35,7 +35,7 @@ class WorkshopController extends AbstractController
                 ->getRepository(Workshop::class)
                 ->findBy(['category'=>$formSearch->get('category')->getData()]);
         }
-        return $this->render('workshop/tuto_index.html.twig', [
+        return $this->render('workshop/index.html.twig', [
             'formSearch'=>$formSearch->createView(),
             'workshops' => $workshops,
         ]);

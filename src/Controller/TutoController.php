@@ -31,7 +31,7 @@ class TutoController extends AbstractController
                 ->getRepository(Tuto::class)
                 ->findBy(['category'=>$formSearch->get('category')->getData()]);
         }
-        return $this->render('tuto/tuto_index.html.twig', [
+        return $this->render('tuto/index.html.twig', [
             'tutos' => $tutos,
             'formSearch'=>$formSearch->createView()
         ]);

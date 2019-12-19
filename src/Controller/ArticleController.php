@@ -37,7 +37,7 @@ class ArticleController extends AbstractController
                 ->getRepository(Article::class)
                 ->findBy(['category'=>$formSearch->get('category')->getData()]);
         }
-        return $this->render('article/tuto_index.html.twig', [
+        return $this->render('article/index.html.twig', [
             'formSearch' => $formSearch->createView(),
             'articles'=>$articles
         ]);
