@@ -20,7 +20,7 @@
         <div class="card-columns">
             {% for workshop in workshops %}
                 <div class="card">
-                    <a href="">
+                    <a href="{{ path('workshop_show', {'id': workshop.id}) }}">
                         <img class="card-img-top" src="{{ workshop.picture }}">
                         <div class="card-body">
                             <h3 class="card-title">{{ workshop.name }}</h3>

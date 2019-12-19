@@ -136,4 +136,42 @@ navbar{
     font-size: 2.5em;
     text-align: center;
 }
+
 /*****END_HOME_PAGE******************************/
+
+
+//show pages
+
+.article-clean .intro p .date {
+    padding: 4px 0 4px 10px;
+    margin-left: 10px;
+    border-left: 1px solid #ddd;
+}
+
+.article-clean .intro p a {
+    color: #333;
+    text-transform: uppercase;
+    padding-left: 3px;
+}
+
+.article-clean .intro {
+    font-size: 16px;
+    margin: 0 auto 30px;
+}
+
+.img-fluid {
+    margin-top: 10%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.btn-workshop {
+    margin: 5%;
+}
+
+
+
+
+
+
