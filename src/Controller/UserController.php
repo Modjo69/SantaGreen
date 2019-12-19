@@ -21,13 +21,18 @@ class UserController extends AbstractController
 {
     /**
      * @Route("/tuto/", name="user")
+     * @param UserInterface|null $user
+     * @return Response
      */
     public function index(?UserInterface $user)
     {
         $userId = $user->getId();
         $tutos = $this->getDoctrine()
             ->getManager()
-            ->findBy($userId);
+            ->getRepository(TutoRepository::class)
+            ->findBy(
+                ['user_id' => $userId]
+            );
 
         return $this->render('user/index.html.twig', [
             'tutos' => $tutos,
