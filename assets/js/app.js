@@ -27,7 +27,8 @@ $(document).ready(function() {
 
 
 
-// ANIMATION FLIP CARD////////////////////////////
+// ANIMATION FLIP CARD////////////////
+// //////////
 
 $(".flipper").click(function() {
     var target = $( event.target );
@@ -144,7 +145,7 @@ function init() {
     }
 
     snow();
-};
+}
 
 canvas.addEventListener("mousemove", function(e) {
     mX = e.clientX,
@@ -154,7 +155,7 @@ canvas.addEventListener("mousemove", function(e) {
 window.addEventListener("resize",function(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-})
+});
 init();
 
 
@@ -242,5 +243,4 @@ function counter()
 
     var actualisation = setTimeout("counter();", 1000);
 }
-
 counter();
