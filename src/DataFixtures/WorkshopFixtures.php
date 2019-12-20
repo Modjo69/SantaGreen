@@ -17,7 +17,7 @@ class WorkshopFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 1; $i <= 40; $i++) {
             $workshop = new Workshop();
             $workshop->setUser($this->getReference('user_' . $i));
-            $workshop->setAddress($this->getReference('address_' . $i));
+            $workshop->setAddress($this->getReference('address_' . random_int(1,5)));
             $workshop->setName($faker->word);
             $workshop->setDescription($faker->text);
             $workshop->setPicture('/images/workshop/workshop-' . $j . '.jpg');

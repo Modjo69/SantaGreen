@@ -14,7 +14,7 @@ class AddressFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        for ($i = 1;$i <= 50; $i++) {
+        for ($i = 1;$i <= 5; $i++) {
             $address = new Address();
             $address->setStreet($faker->streetAddress);
             $address->setPostalCode($faker->postcode);
