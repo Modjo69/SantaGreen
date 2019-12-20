@@ -66,7 +66,6 @@ $font-family: 'Montserrat Alternates', sans-serif;
 
 /************************PROFILE PAGE*************************/
 
-
 .profile {
     padding: 5rem 0;
 }
@@ -85,10 +84,15 @@ $font-family: 'Montserrat Alternates', sans-serif;
     align-items: center;
     margin-right: 3rem;
     margin-left: 20px;
+
 }
+
+
 
 .profile-image img {
     border-radius: 50%;
+    border: red 2px solid;
+
 }
 
 .profile-user-settings,
@@ -106,6 +110,7 @@ $font-family: 'Montserrat Alternates', sans-serif;
 .profile-user-name {
     display: inline-block;
     font-size: 3.2rem;
+    font-family: oblique;
     font-weight: 300;
     color: black;
 }
@@ -681,3 +686,16 @@ footer a{
     color: white;
     font-size: 1.2em;
 }
+.nav-item a{
+    text-shadow: black 1px 0 3px;
+
+}
+.nav-item a:hover{
+    color:lightgray;
+}
+
+#oye{
+    background-image: url("../../public/images/navNoel.png");
+}
+
+

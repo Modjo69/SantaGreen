@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="container">
-        <div class="card " style="background-color:rgb(350, 250, 250, 0.8);">
+        <div class="card h-25 " style="background-color:rgb(350, 250, 250, 0.9);">
             <ul class="lightrope">
                 <li></li>
                 <li></li>
@@ -50,34 +50,34 @@
                 <li></li>
             </ul>
         <div class="profile">
-            <div class="profile-image">
-                <img src="{{ app.user.picture }}" alt="" class="img-fluid">
+            <div class="profile-image ">
+                <img " src="{{ app.user.picture }}" alt="" class="img-fluid">
             </div>
             <div class="profile-user-settings">
-                <h1 class="profile-user-name">{{ app.user.firstname }} {{ app.user.lastname }}</h1>
+                <h1 class="ml-5 mt-5 profile-user-name">{{ app.user.firstname }} {{ app.user.lastname }}</h1>
             </div>
-            <div class="profile-stats">
+            <div class="ml-5 profile-stats">
                 <ul class="profile-ul">
-                    <li><span class="profile-stat-count">164</span> posts</li>
-                    <li><span class="profile-stat-count">188</span> followers</li>
-                    <li><span class="profile-stat-count">206</span> following</li>
+                    <li><span class=" profile-stat-count">164</span><br> posts</li>
+                    <li><span class="profile-stat-count">188</span><br> followers</li>
+                    <li><span class="profile-stat-count">206</span> <br>   following</li>
                 </ul>
             </div>
             <div class="profile-bio">
-                <p class="p_account"><span class="profile-real-name"></span>{{ app.user.description }}</p>
+                <p class="ml-5 p_account"><span class="profile-real-name"></span>{{ app.user.description }}</p>
             </div>
         </div>
         </div>
         <!-- End of profile section -->
-        <ul class="nav justify-content-center">
+        <ul id="oye" class="nav justify-content-center ">
             <li class="nav-item">
                 <a class="nav-link active profile-menu" href="{{ path('user_indexuser_account') }}">Mon Profil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link profile-menu" href="{{ path('user_indexarticle_index') }}">Mes Produits</a>
+                <a class="nav-link profile-menu" href="{{ path('user_indexworkshop') }}">Mes Produits</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link profile-menu" href="{{ path('user_indextuto_index') }}">Mes Tutoriels</a>
+                <a class="nav-link profile-menu" href="{{ path('user_indexworkshop') }}">Mes Tutoriels</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link profile-menu" href="{{ path('user_indexworkshop') }}">Mes Ateliers</a>
