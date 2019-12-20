@@ -66,7 +66,7 @@ Découvrez les quelques étapes à suivre, pour monter vos cloches décoratives,
         8 => [
             'name' => 'la terrine de foie gras maison',
             'description' => 'Noël arrive, il est temps d\'épater vos convives... Pour cela, réalisez votre terrine de foie gras maison grâce à ce pas-à-pas facile ! ',
-            'link' => 'https://www.maxi-mag.fr/recettes/etape-6.html#slideshow-1',
+            'link' => 'https://www.maxi-mag.fr/recettes/diy-la-terrine-de-fois-gras-maison.html#slideshow-1',
             'picture' => '/images/etape1.jpg'
         ],
         9 => [
